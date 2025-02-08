@@ -2,9 +2,9 @@
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 
-/* Fix background opacity */
+ Fix background opacity */
 #wrapper {
-    background: rgba(255, 255, 255, 1); /* Changed opacity from 0.9 to 1 */
+    background: rgba(255, 255, 255, 1); /* Changed opacity from 0.9 to 1 
 }
 
 /* Improve content alignment */
