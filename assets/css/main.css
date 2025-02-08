@@ -18,11 +18,12 @@
 
 /* Fix menu positioning */
 #menu {
-    position: fixed;
-    top: 10px;
-    left: 10px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
 }
-
+ 
 /* Ensure overflow does not hide content */
 body, html {
     overflow: visible;
