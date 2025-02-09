@@ -2151,7 +2151,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", en
 			font-family: 'Font Awesome 5 Brands';
 		}
 
-		.icon.alt:before {
+	/*.icon.alt:before {
 			background-color: #ffffff;
 			border-radius: 100%;
 			color: #242943;
@@ -2160,6 +2160,17 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", en
 			line-height: 2em;
 			text-align: center;
 			width: 2em;
+		}*/
+		.icon.alt:before {background: hsla(208, 60%, 73%, 1);
+
+							background: linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
+
+							background: -moz-linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
+
+							background: -webkit-linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
+
+							filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", endColorstr="#133a94", GradientType=1 );
+							
 		}
 
 	a.icon.alt:before {
