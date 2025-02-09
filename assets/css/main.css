@@ -3956,13 +3956,11 @@ input, select, textarea {
 			}
 
 			#menu .close:hover:after, #menu .close:active:after {
-
-   				opacity: 1;
+				opacity: 1;
 			}
 
 	body.is-ie #menu {
-		(background: rgba(42, 47, 74, 0.975);
-		
+		background: rgba(42, 47, 74, 0.975);
 	}
 
 	body.is-menu-visible #wrapper {
