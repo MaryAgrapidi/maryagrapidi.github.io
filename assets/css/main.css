@@ -100,23 +100,13 @@ input, select, textarea {
 
 
 
-body {
-background: hsla(208, 60%, 73%, 1);
 
-background: linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
 
-background: -moz-linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
-
-background: -webkit-linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", endColorstr="#133a94", GradientType=1 );
-}
-
-	/*CHANGE HERE
+	
 
 		body {
 		background: #242943;
-	}*/
+	}
 
 
 
