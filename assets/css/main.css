@@ -3960,7 +3960,8 @@ input, select, textarea {
 			}
 
 	body.is-ie #menu {
-		background: rgba(42, 47, 74, 0.975);
+		/*(background: rgba(42, 47, 74, 0.975);*/
+		background-color: #63a6e6;
 	}
 
 	body.is-menu-visible #wrapper {
@@ -3986,8 +3987,4 @@ input, select, textarea {
 		}
 
 
-#header nav a[href="#menu"]:before,
-#header nav a[href="#menu"]:after,
-#header nav a[href="#menu"] span {
-  background-color: #63a6e6;
-}
+
