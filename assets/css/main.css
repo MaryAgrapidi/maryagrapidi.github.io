@@ -3984,3 +3984,9 @@ input, select, textarea {
 			opacity: 1;
 			visibility: visible;
 		}
+
+
+/* Αλλαγή χρώματος των τριών γραμμών του μενού */
+#header nav a[href="#menu"]:before, #header nav a[href="#menu"]:after {
+  background-color: #63a6e6;
+}
