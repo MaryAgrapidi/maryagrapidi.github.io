@@ -183,7 +183,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", en
 		}
 
 		a:active {
-			color: ##57b4f7 !important;
+			color: #57b4f7 !important;
 		}
 
 	strong, b {
@@ -2151,7 +2151,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", en
 			font-family: 'Font Awesome 5 Brands';
 		}
 
-	.icon.alt:before {
+		.icon.alt:before {				/allagi xrwmatos eikonidiwn lkedin klp*/
 			background-color: #ffffff;
 			border-radius: 100%;
 			color: #242943;
@@ -2161,7 +2161,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", en
 			text-align: center;
 			width: 2em;
 		}
-		
 
 	a.icon.alt:before {
 		-moz-transition: background-color 0.2s ease-in-out;
@@ -2427,7 +2426,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", en
 					}
 
 					ul.pagination li > .page.active:active {
-						background-color: ##57b4f7;
+						background-color: #57b4f7;
 					}
 
 			ul.pagination li:first-child {
@@ -2571,8 +2570,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", en
 		button:active,
 		.button:active {
 			background-color: rgba(155, 241, 255, 0.1);
-			box-shadow: inset 0 0 0 2px ##57b4f7;
-			color: ##57b4f7;
+			box-shadow: inset 0 0 0 2px #57b4f7;
+			color: #57b4f7;
 		}
 
 		input[type="submit"].icon:before,
@@ -2714,7 +2713,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", en
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color: ##57b4f7;
+				background-color: #57b4f7;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -2819,7 +2818,16 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", en
 			}
 
 			.tiles article:after {
-				background-color: rgba(36, 41, 67, 0.25);
+				/*background-color: rgba(36, 41, 67, 0.25);*/
+				background: hsla(208, 60%, 73%, 1);
+
+background: linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
+
+background: -moz-linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
+
+background: -webkit-linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", endColorstr="#133a94", GradientType=1 );
 				content: '';
 				display: block;
 				height: 100%;
@@ -3177,7 +3185,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", en
 			}
 
 			#header .logo:active strong {
-				background-color: ##57b4f7;
+				background-color: #57b4f7;
 			}
 
 		#header nav {
