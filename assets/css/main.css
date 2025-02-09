@@ -101,15 +101,8 @@ input, select, textarea {
 
 
 body {
-background: hsla(208, 60%, 73%, 1);
-
-background: linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
-
-background: -moz-linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
-
-background: -webkit-linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92BEE4", endColorstr="#133A94", GradientType=1 );
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Σκούρο μπλε προς γκρι */
+  color: white;
 }
 
 	/*CHANGE HERE
@@ -179,11 +172,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92BEE4", en
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #61b2ff !important;
+			color: #63a6e6 !important;
 		}
 
 		a:active {
-			color: #9bf1ff  !important;
+			color: ##57b4f7 !important;
 		}
 
 	strong, b {
@@ -1960,8 +1953,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92BEE4", en
 		input[type="url"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #9bf1ff;
-			box-shadow: 0 0 0 2px #9bf1ff;
+			border-color: #63a6e6;
+			box-shadow: 0 0 0 2px #63a6e6;
 		}
 
 	select {
@@ -2060,14 +2053,14 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92BEE4", en
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
 			background: #ffffff;
-			border-color: #9bf1ff;
+			border-color: #63a6e6;
 			content: '\f00c';
 			color: #242943;
 		}
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			box-shadow: 0 0 0 2px #9bf1ff;
+			box-shadow: 0 0 0 2px #63a6e6;
 		}
 
 	input[type="radio"] + label:before {
@@ -2421,12 +2414,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92BEE4", en
 				}
 
 					ul.pagination li > .page.active:hover {
-						background-color: #9bf1ff;
+						background-color: #63a6e6;
 						color: #242943 !important;
 					}
 
 					ul.pagination li > .page.active:active {
-						background-color: #53e3fb;
+						background-color: ##57b4f7;
 					}
 
 			ul.pagination li:first-child {
@@ -2560,8 +2553,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92BEE4", en
 		button:active,
 		.button:hover,
 		.button:active {
-			box-shadow: inset 0 0 0 2px #9bf1ff;
-			color: #9bf1ff;
+			box-shadow: inset 0 0 0 2px #63a6e6;
+			color: #63a6e6;
 		}
 
 		input[type="submit"]:active,
@@ -2570,8 +2563,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92BEE4", en
 		button:active,
 		.button:active {
 			background-color: rgba(155, 241, 255, 0.1);
-			box-shadow: inset 0 0 0 2px #53e3fb;
-			color: #53e3fb;
+			box-shadow: inset 0 0 0 2px ##57b4f7;
+			color: ##57b4f7;
 		}
 
 		input[type="submit"].icon:before,
@@ -2704,7 +2697,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92BEE4", en
 			button.primary:active,
 			.button.primary:hover,
 			.button.primary:active {
-				background-color: #9bf1ff;
+				background-color: #63a6e6;
 				color: #242943 !important;
 			}
 
@@ -2713,7 +2706,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92BEE4", en
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color: #53e3fb;
+				background-color: ##57b4f7;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -3172,11 +3165,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92BEE4", en
 			}
 
 			#header .logo:hover strong {
-				background-color: #9bf1ff;
+				background-color: #63a6e6;
 			}
 
 			#header .logo:active strong {
-				background-color: #53e3fb;
+				background-color: ##57b4f7;
 			}
 
 		#header nav {
