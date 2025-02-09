@@ -98,9 +98,21 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
-	body {
+
+
+body {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Σκούρο μπλε προς γκρι */
+  color: white;
+}
+
+	/*CHANGE HERE
+
+		body {
 		background: #242943;
-	}
+	}*/
+
+
+
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
