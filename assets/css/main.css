@@ -3986,6 +3986,8 @@ input, select, textarea {
 		}
 
 
-#header nav a[href="#menu"] {
-  display: none;
+#header nav a[href="#menu"]:before,
+#header nav a[href="#menu"]:after,
+#header nav a[href="#menu"] span {
+  background-color: new-color;
 }
