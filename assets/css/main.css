@@ -101,8 +101,15 @@ input, select, textarea {
 
 
 body {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Σκούρο μπλε προς γκρι */
-  color: white;
+background: hsla(180, 40%, 73%, 1);
+
+background: linear-gradient(90deg, hsla(180, 40%, 73%, 1) 0%, hsla(275, 19%, 88%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(180, 40%, 73%, 1) 0%, hsla(275, 19%, 88%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(180, 40%, 73%, 1) 0%, hsla(275, 19%, 88%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#9DD5D5", endColorstr="#E1DAE6", GradientType=1 );
 }
 
 	/*CHANGE HERE
