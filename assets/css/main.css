@@ -2821,13 +2821,13 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", en
 				/*background-color: rgba(36, 41, 67, 0.25);*/
 				background: hsla(208, 60%, 73%, 1);
 
-background: linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
+				background: linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
 
-background: -moz-linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
+				background: -moz-linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
 
-background: -webkit-linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
+				background: -webkit-linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
 
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", endColorstr="#133a94", GradientType=1 );
+				filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", endColorstr="#133a94", GradientType=1 );
 				content: '';
 				display: block;
 				height: 100%;
@@ -2859,7 +2859,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", en
 			}
 
 			.tiles article:nth-child(6n - 5):before {
-				background-color: #6fc3df;
+				background-color: #6fc3df; 											/*αλλαγη χρωματων στα πορτζεκτσ οταν πατας επανω*/
 			}
 
 			.tiles article:nth-child(6n - 4):before {
@@ -3028,7 +3028,16 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", en
 				-webkit-flex-direction: row-reverse;
 				-ms-flex-direction: row-reverse;
 				flex-direction: row-reverse;
-				background-color: #333856;
+				/*background-color: #333856;*/
+				background: hsla(208, 60%, 73%, 1);
+
+				background: linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
+
+				background: -moz-linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
+
+				background: -webkit-linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
+
+				filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", endColorstr="#133a94", GradientType=1 );
 			}
 
 				.spotlights > section:nth-child(2n) > .content {
