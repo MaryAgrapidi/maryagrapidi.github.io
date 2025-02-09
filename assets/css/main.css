@@ -3986,7 +3986,6 @@ input, select, textarea {
 		}
 
 
-/* Αλλαγή χρώματος των τριών γραμμών του μενού */
-#header nav a[href="#menu"]:before, #header nav a[href="#menu"]:after {
-  background-color: #63a6e6;
+#header nav a[href="#menu"] {
+  display: none;
 }
