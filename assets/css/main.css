@@ -2849,7 +2849,8 @@ input, select, textarea {
 			}
 
 			.tiles article:nth-child(6n - 5):before {
-				background-color: #2d3659; 											/*αλλαγη χρωματων στα πορτζεκτσ οταν πατας επανω*/
+				/*background-color: #2d3659; 	*/
+				background: linear-gradient(90deg, #2d3659 30%, #4c6b8d 70%);                 /*αλλαγη χρωματων στα πορτζεκτσ οταν πατας επανω*/
 			}
 
 			.tiles article:nth-child(6n - 4):before {
@@ -3287,7 +3288,9 @@ input, select, textarea {
 		}
 
 			#header.alt.style1 .logo strong {       /*παλι αλλαζουν εδω τα κουτια των προτζεκτς*/
-				color: #2d3659;
+
+				background: linear-gradient(90deg, #2d3659 30%, #4c6b8d 70%);                 /*αλλαγη χρωματων στα πορτζεκτσ οταν πατας επανω*/
+				/*color: #2d3659;*/
 			}
 
 			#header.alt.style2 .logo strong {
@@ -3519,7 +3522,7 @@ input, select, textarea {
 			}
 
 		#banner.style1:after {
-			background-color: #2d3659;
+			background: linear-gradient(90deg, #2d3659 30%, #4c6b8d 70%);    /*background-color: #2d3659;*/
 		}
 
 		#banner.style2:after {
