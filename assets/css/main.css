@@ -3989,5 +3989,5 @@ input, select, textarea {
 #header nav a[href="#menu"]:before,
 #header nav a[href="#menu"]:after,
 #header nav a[href="#menu"] span {
-  background-color: new-color;
+  background-color: #63a6e6;
 }
