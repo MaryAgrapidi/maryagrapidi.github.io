@@ -135,7 +135,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92BEE4", en
 /* Type */
 
 	body, input, select, textarea {
-		color: #ffffff;
+		background: hsla(208, 60%, 73%, 1);
+		/*color: #ffffff;*/
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 17pt;
 		font-weight: 300;
