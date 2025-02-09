@@ -3473,6 +3473,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92bee4", en
 		}
 
 		#banner > .inner {
+			  background: linear-gradient(315deg, hsla(208, 60%, 73%, 1) 12%, hsla(222, 77%, 33%, 1) 100%);
+    padding: 20px; /* Προσθήκη padding για απόσταση από το κείμενο */
+    border-radius: 10px; /* Προαιρετικό: Στρογγυλοποίηση των γωνιών */ 
+			
 			-moz-transition: opacity 1.5s ease, -moz-transform 0.5s ease-out, -moz-filter 0.5s ease, -webkit-filter 0.5s ease;
 			-webkit-transition: opacity 1.5s ease, -webkit-transform 0.5s ease-out, -webkit-filter 0.5s ease, -webkit-filter 0.5s ease;
 			-ms-transition: opacity 1.5s ease, -ms-transform 0.5s ease-out, -ms-filter 0.5s ease, -webkit-filter 0.5s ease;
