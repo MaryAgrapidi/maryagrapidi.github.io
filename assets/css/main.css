@@ -2160,11 +2160,11 @@ input, select, textarea {
 	}
 
 	a.icon.alt:hover:before {
-		background-color: #6fc3df;
+		background-color: #002e52;
 	}
 
 	a.icon.alt:active:before {
-		background-color: #37a6cb;
+		background-color: #002e52;
 	}
 
 /* Image */
