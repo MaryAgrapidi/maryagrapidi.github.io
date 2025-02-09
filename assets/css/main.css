@@ -1,95 +1,120 @@
-@import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Data Analytics Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-/* Basic Reset */
-html, body, div, span, applet, object,
-iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
-pre, a, abbr, acronym, address, big, cite,
-code, del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var, b,
-u, i, center, dl, dt, dd, ol, ul, li, fieldset,
-form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside,
-canvas, details, embed, figure, figcaption,
-footer, header, hgroup, menu, nav, output, ruby,
-section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-/* Gradient Background */
-body {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    color: #ffffff;
-    font-family: "Source Sans Pro", Helvetica, sans-serif;
-    font-size: 17pt;
-    font-weight: 300;
-    letter-spacing: 0.025em;
-    line-height: 1.65;
-    -ms-overflow-style: scrollbar;
-}
+				<!-- Header -->
+					<header id="header" class="alt">
+						 <a href="index.html" class="logo"><strong>Data Analytics</strong> <span>Portfolio</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
 
-/* Header */
-#header {
-    background: rgba(30, 60, 114, 0.8);
-    backdrop-filter: blur(10px);
-}
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#one">About Me</a></li>
+							<li><a href="#two">Projects</a></li>
+							<li><a href="#footer">Contact</a></li>
+						</ul>
+					</nav>
 
-/* Buttons */
-.button {
-    background: linear-gradient(90deg, #ff8a00, #da1b60);
-    border: none;
-    color: white;
-    transition: background 0.3s ease-in-out;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-}
-.button:hover {
-    background: linear-gradient(90deg, #da1b60, #ff8a00);
-}
 
-/* Project Tiles */
-.tiles article {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-    padding: 20px;
-    text-align: center;
-}
-.tiles article:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.2);
-}
+				<!-- Banner -->
+				<section id="banner" class="major">
+					<div class="inner">
+						<header class="major">
+							<h1>Hello, I'm Mary Agrapidi</h1>
+						</header>
+						<div class="content">
+                    <p>A Business Intelligence Engineer with experience in Data Analytics, Data Management, SQL, Power BI, and SSRS, looking to further enhance my skills and contribute to impactful data-driven solutions in dynamic environments.</p>
+                    <ul class="actions">
+                        <li><a href="#one" class="button next scrolly">Learn More About Me</a></li>
+                    </ul>
+                        </div>
+			        </div>
+				</section>
+	
 
-/* Links */
-a {
-    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-    border-bottom: dotted 1px;
-    color: inherit;
-    text-decoration: none;
-}
-a:hover {
-    border-bottom-color: transparent;
-    color: #9bf1ff !important;
-}
-a:active {
-    color: #53e3fb !important;
-}
+				<!-- Main -->
+					<div id="main">
 
-/* Responsive */
-@media screen and (max-width: 1280px) {
-    body {
-        font-size: 14pt;
-    }
-}
-@media screen and (max-width: 736px) {
-    body {
-        font-size: 12pt;
-    }
-}
+						<!-- One -->
+						<section id="one">
+							<div class="inner">
+								<header class="major">
+									<h2>About Me</h2>
+								</header>
+							    <p>With a background in Computer Engineering and a strong passion for Business Intelligence, I thrive on turning raw data into strategic insights. My studies at the University of Western Attica have provided me with a robust foundation in computer systems and analytical techniques, which I now apply in my work as a Business Intelligence Engineer.</p>
+								<p>Professionally, I specialize in Data Analytics, Data Management, SQL, Power BI, and SSRS, with extensive experience in building end-to-end BI solutions. I leverage SQL to extract and manipulate data, and Power BI to create impactful dashboards. Additionally, my engineering background has sharpened my problem-solving skills, allowing me to approach challenges with a logical and methodical mindset. I am passionate about continuously learning and applying innovative solutions to optimize business performance and enable data-driven decision-making.</p>
+								<p>Hiring me means gaining a results-oriented BI Engineer with a passion for using data to solve complex problems and drive business success.</p>
+								<ul class="actions">
+									<li><a href="#two" class="button next">Projects</a></li>
+								</ul>
+							</div>
+						</section>
+
+						<!-- Two -->
+							<section id="two" class="tiles">
+								<article>
+									<span class="image">
+									 <img src="images/new3.jpg" alt="" />
+									</span>
+									<header class="major">
+										
+										<h3><a href="project1.html" class="link"> Project 1 </a></h3>
+										<h4> Earthquake Monitoring and Analysis in Greece: SQL Analysis </h4>
+									</header>
+								</article>
+								
+								<article>
+									<span class="image">
+									 <img src="images/new4.jpg" alt="" />
+									</span>
+									<header class="major">
+										
+										<h3><a href="project2.html" class="link"> Project 2 </a></h3>
+										<h4> Earthquake Monitoring and Analysis in Greece: Power BI Insights </h4>
+									</header>
+								</article>
+							</section>
+					    </div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								 <li><a href="https://github.com/maryagrapidi" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								 <li><a href="https://www.linkedin.com/in/maria-agrapidi-business-intelligence" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								 <li><a href="mailto:maryagrapidi@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+							<ul class="copyright">
+							<li>&copy; Mary Agrapidi</li>
+						    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                        </ul>
+					</div>
+				</footer>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
