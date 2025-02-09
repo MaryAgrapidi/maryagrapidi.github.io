@@ -2849,7 +2849,7 @@ input, select, textarea {
 			}
 
 			.tiles article:nth-child(6n - 5):before {
-				background-color: #6fc3df; 											/*αλλαγη χρωματων στα πορτζεκτσ οταν πατας επανω*/
+				background-color: #0e5066; 											/*αλλαγη χρωματων στα πορτζεκτσ οταν πατας επανω*/
 			}
 
 			.tiles article:nth-child(6n - 4):before {
@@ -3287,7 +3287,7 @@ input, select, textarea {
 		}
 
 			#header.alt.style1 .logo strong {       /*παλι αλλαζουν εδω τα κουτια των προτζεκτς*/
-				color: #6fc3df;
+				color: #0e5066;
 			}
 
 			#header.alt.style2 .logo strong {
