@@ -179,11 +179,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#92BEE4", en
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #9bf1ff !important;
+			color: #63a6e6 !important;
 		}
 
 		a:active {
-			color: #53e3fb !important;
+			color: #9bf1ff  !important;
 		}
 
 	strong, b {
