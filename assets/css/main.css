@@ -2528,12 +2528,7 @@ input, select, textarea {
 		box-shadow: inset 0 0 0 2px #ffffff;
 		color: #ffffff;
 		cursor: pointer;
-		display: /*inline-block;*/
-		
-		display: flex;
-    		flex-direction: column; /* Κάνει τα στοιχεία να στοιχίζονται κάθετα */
-    		align-items: flex-start; /* Προσαρμογή στο αριστερό μέρος (προαιρετικά) */
-		
+		display: block;
 		font-size: 0.8em;
 		font-weight: 600;
 		height: 3.5em;
