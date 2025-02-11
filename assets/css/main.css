@@ -2603,8 +2603,12 @@ input, select, textarea {
 		input[type="button"].next,
 		button.next,
 		.button.next {
+			/*padding-right: 4.5em;
+			position: relative;*/
 			padding-right: 4.5em;
-			position: relative;
+    			position: relative;
+   			display: block; /* Βάζει το κουμπί σε νέα γραμμή */
+  			margin-top: 20px; /* Προσθέτει κενό από πάνω */
 		}
 
 			input[type="submit"].next:before, input[type="submit"].next:after,
