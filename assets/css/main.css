@@ -2674,7 +2674,11 @@ input, select, textarea {
 				input[type="button"].next,
 				button.next,
 				.button.next {
-					padding-right: 5em;
+					/*padding-right: 5em;*/
+					padding-right: 4.5em;
+    					position: relative;
+    					display: block; /* Βάζει το κουμπί σε νέα γραμμή */
+   					 margin-top: 20px; /* Προσθέτει κενό από πάνω */
 				}
 
 			}
