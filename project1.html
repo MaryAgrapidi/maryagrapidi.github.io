@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Data Analytics Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<a href="index.html" class="logo"><strong>Data Analytics</strong> <span>Portfolio</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#one">About Me</a></li>
+							<li><a href="#two">Projects</a></li>
+							<li><a href="#footer">Contact</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Project 1</h1>
+										<h2>Earthquake Monitoring and Analysis in Greece: SQL Analysis</h2>
+									</header>
+								
+									<span class="image main">
+									<img src="images/image_3.png" alt="Temp Text" width="350" height="500" /></span>
+									
+									
+								
+									<h3> The Opportunity:</h3>
+									<p> This project focuses on analyzing earthquake activity in Greece using real earthquake data recorded from 01/01/2022 to 14/02/2025. 
+									The goal is to store, clean, analyze, and derive meaningful insights from the data, using SQL Server for data management and querying.</p>
+								
+								
+									<h4>What is an Earthquake?</h4>
+
+										<p>An earthquake is the shaking of the ground caused by the rupture of rocks, which is the result of a long-term process of accumulating dynamic energy in stressed areas of the lithosphere.
+
+										An earthquake occurs when the mechanical equilibrium of rocks is disturbed by natural causes related to the Earth's interior.
+
+										How do we measure earthquakes?
+
+										To compare earthquakes, a measure of their strength was needed. Thus, the Magnitude (M) of an earthquake was defined, which represents the amount of energy released from the focus during earthquake activity.
+
+										Magnitude is determined by measuring various parameters of earthquake waves, such as amplitude, period, and duration.
+
+										Several magnitude scales have been devised for this purpose. The most well-known is the local magnitude scale (ML), also known as the Richter scale.
+
+										The largest earthquake ever recorded globally had a magnitude of 9.5 (Chile, 22-5-1960).</p>
+										
+								
+									<h4>Data Source</h4>
+										<p>The earthquake data used in this analysis were obtained from the National Observatory of Athens - Geodynamic Institute. 
+										The data were extracted from their official database, accessible at: Geodynamic Institute Search Database.</p>
+										
+								
+								
+									<h4>Data Extraction and Loading</h4>
+									<p>The earthquake data were collected from reliable sources and imported into SQL Server. The dataset includes attributes such as:</p>
+										<ul>
+										<li><p>Origin Time (GMT)</p></li>
+
+										<li><p>Latitude & Longitude</p></li>
+
+										<li><p>Depth (km)</p></li>
+
+										<li><p>Magnitude (ML)</p></li>
+
+										<li><p>Location & Region</p></li>
+										</ul>
+										
+										<p>A Data Warehouse structure was designed to efficiently store and analyze the data.</p>
+
+								            
+				
+									<h4>Data Cleaning & Modelling</h4>
+									<h4>During data processing:</h4>
+										<ul>
+										<li><p>Null values were replaced where applicable.</p></li>
+
+										<li><p>Data types were standardized.</p></li>
+
+										<li><p>Fact and Dimension tables were created to optimize querying performance.</p></li>
+										</ul>
+
+
+									<h4> Key Insights </h4>
+									<h4> 1. Earthquake Activity by Region </h4>
+											
+												<ul>
+												<li><p> Identified the regions with the highest number of recorded earthquakes.</p></li>
+
+												<li><p> Determined the regions with the most high-magnitude (>6.0) earthquakes.</p></li>
+												
+												</ul>
+												
+									<h4>2. Strongest Earthquakes Analysis</h4>
+											    <ul>
+												<li><p> Found the strongest earthquake recorded per region.</p></li>
+												
+												<li><p> Listed the top 3 strongest earthquakes in each region.</p></li>
+												</ul>
+
+												
+									<h4>3. Time-Based Earthquake Trends</h4>
+											    <ul>
+												<li><p> Identified peak times and months for earthquake activity.</p></li>											
+												
+												<li><p> Analyzed the most earthquake-prone days and hours.</p></li>
+												</ul>
+												
+									<h4>4. Depth vs. Magnitude Correlation</h4>		
+												<ul>
+												<li><p>Examined if earthquakes are occurring at greater depths over time.</p></li>
+											    
+												<li><p> Determined the relationship between earthquake depth and magnitude per region.</p></li>											
+											
+												</ul>
+												
+									<h4>5. Earthquake Clusters and Patterns</h4>
+												<ul>
+												<li><p>Detected regions experiencing earthquake swarms within 48-hour periods.</p></li>
+											    
+												<li><p> Identified locations with recurring earthquake activity.</p></li>											
+											
+												</ul>
+									
+									
+									<h4>6. Spatial Analysis of Earthquakes</h4>
+											    <ul>
+												<li><p>Found earthquakes occurring within a 100 km radius of major cities (e.g., Athens).</p></li>
+											    
+												<li><p> Assessed proximity-based earthquake risk for different locations.</p></li>											
+											
+												</ul>
+												
+									<h4> 7. Risk Assessment for Future Earthquakes</h4>
+											     <ul>
+												<li><p>Estimated the probability of a future earthquake >6.0 per region based on historical data.</p></li>
+											    
+												<li><p> Highlighted regions with a higher likelihood of strong earthquakes.</p></li>											
+											
+												</ul>
+												
+											
+									<h3>The Outcome</h3>
+									<p> This project demonstrates how SQL can be used to analyze and extract insights from earthquake activity data. By leveraging SQL queries, we can uncover trends, detect patterns, and perform in-depth analysis to better understand earthquake behavior in Greece.</p>
+								<ul class="actions">
+									     <li><a href="https://github.com/maryagrapidi/Earthquake Monitoring and Analysis in Greece_SQL_Project" class="button next">See Code Here</a></li>
+								     </ul>
+								</div>
+							</section>
+
+					</div>			
+
+	<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								 <li><a href="https://github.com/maryagrapidi" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								 <li><a href="https://www.linkedin.com/in/maria-agrapidi-business-intelligence" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								 <li><a href="mailto:maryagrapidi@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+							<ul class="copyright">
+							<li>&copy; Mary Agrapidi</li>
+						    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                        </ul>
+					</div>
+				</footer>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
