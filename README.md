@@ -4,7 +4,7 @@ aj@lkn.io | @ajlkn
 
 
 Demo Images:
-	Unsplash (unsplash.com)
+	DALL·E
  	
 
 Icons:
