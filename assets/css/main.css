@@ -4007,9 +4007,9 @@ input, select, textarea {
     border-radius: 10px;
 }
 .toggle-button {
-  background: none;      /* Αφαιρεί το background */
-  color: #e3e3e3;        /* Διατηρεί το χρώμα του κειμένου */
-  border: none;          /* Αφαιρεί το border */
+  background: none !important;      /* Αφαιρεί το background */
+  color: #e3e3e3 !important;          /* Διατηρεί το επιθυμητό χρώμα για το κείμενο */
+  border: none !important;           /* Αφαιρεί το περίγραμμα */
   /* padding: 5px;          Μικρότερο padding για να μην φαίνεται "τεκστιό" */
   cursor: pointer;
   font-size: inherit;    /* Να κληρονομεί το μέγεθος του κειμένου */
