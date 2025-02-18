@@ -3998,6 +3998,7 @@ input, select, textarea {
 
 .toggle-query-button {
   background: none;      /* Αφαιρεί το background */
+  color: #e3e3e3;          /* Διατηρεί το επιθυμητό χρώμα για το κείμενο */
   border: none;           /* Αφαιρεί το περίγραμμα */
   cursor: pointer;
   font-size: inherit;    /* Να κληρονομεί το μέγεθος του κειμένου */
