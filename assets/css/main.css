@@ -4003,16 +4003,16 @@ input, select, textarea {
     margin-top: 10px;
     padding: 10px;
     border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    background-color: #305980;
     border-radius: 5px;
 }
 .toggle-button {
-  background-color: #f5f5f5; /* Ανοιχτό γκρι αντί για λευκό */
-  color: #333;             /* Σκούρα γράμματα για καλύτερη αντίθεση */
+  background-color: #305980; /* Ανοιχτό γκρι αντί για λευκό */
+  color: #e3e3e3;             /* Σκούρα γράμματα για καλύτερη αντίθεση */
   border: 1px solid #ccc;  /* Ελαφρύ border για οριοθέτηση */
   padding: 15px;           /* Εσωτερικό padding ώστε να μην είναι το περιεχόμενο "τερστιό" */
   max-width: 800px;        /* Ορισμός μέγιστου πλάτους ώστε να μην απλώνεται πάρα πολύ */
-  margin: 20px auto;       /* Κεντράρισμα του container με εξωτερικά περιθώρια */
+  /*margin: 20px auto;       /* Κεντράρισμα του container με εξωτερικά περιθώρια */*/
   cursor: pointer;
    
 }
