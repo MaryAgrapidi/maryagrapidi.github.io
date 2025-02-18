@@ -4000,5 +4000,11 @@ input, select, textarea {
     display: none; /* Αρχικά κρύβει τα queries */
     border: none;
 }
+.toggle-button {
+  background: none;      /* Αφαιρεί το background */
+  border: none;           /* Αφαιρεί το περίγραμμα */
+  cursor: pointer;
+  text-transform: none;
+}
 
 
