@@ -331,9 +331,6 @@
 						$menu._hide();
 
 			});
-
-})(jQuery);
-
 <script>
     function toggleQuery(id) {
         var queryDiv = document.getElementById(id);
@@ -344,4 +341,7 @@
         }
     }
 </script>
+})(jQuery);
+
+
 
