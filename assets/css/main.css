@@ -4002,7 +4002,7 @@ input, select, textarea {
 }
 .toggle-button {
   background: none;      /* Αφαιρεί το background */
-  border: none;           /* Αφαιρεί το περίγραμμα */
+  border: none !important;           /* Αφαιρεί το περίγραμμα */
   cursor: pointer;
   text-transform: none;
 }
