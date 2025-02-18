@@ -217,10 +217,99 @@ ORDER BY r.region_name desc;
 												
 									<h4>2. Strongest Earthquakes Analysis</h4>
 											    <ul>
-												<li><p> Found the strongest earthquake recorded per region.</p></li>
-												
+												    <button class="toggle-query-button" onclick="toggleQuery('query3')"><li><p> Found the strongest earthquake recorded per region.</p></li></button>
 
-												    <button class="toggle-query-button" onclick="toggleQuery('query4')"><li><p> Listed the top 3 strongest earthquakes in each region.</p></li></button>
+												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												<div id="query3" class="query-container">
+<pre>
+<code>
+SELECT r.region_name, 
+       [Origin Time (GMT)],
+       [Location],
+       MAX(e.[Magnitude (ML)]) AS max_magnitude
+FROM Earthquakes_Data e
+JOIN Region_Dim r ON e.region_name = r.region_name
+WHERE YEAR(e.[Origin Time (GMT)])  between 2022 and 2025
+GROUP BY r.region_name,
+	 [Origin Time (GMT)],
+	 [Location]
+ORDER BY max_magnitude DESC;
+</code>
+</pre>
+											<h3>Sample Results</h3>
+											<table border="1">
+											<tr>
+											<th>Region_Name</th>
+											<th>Location</th>
+											<th>Origin Time (GMT)</th>
+											<th>Magnitude (ML)</th>
+											</tr>												
+											<tr>
+											    <td>Rodhos</td>
+											    <td>79.8 km SSE of Rodhos</td>
+											    <td>2023-01-25 12:37:06.000</td>
+											    <td>5.9</td>
+											</tr>
+											<tr>
+											    <td>Pyrgos</td>
+											    <td>57.3 km SSW of Pyrgos</td>
+											    <td>2024-03-29 07:12:48.000</td>
+											    <td>5.8</td>
+											</tr>
+											<tr>
+											    <td>Karpathos</td>
+											    <td>63.8 km WNW of Karpathos</td>
+											    <td>2022-11-20 23:25:01.000</td>
+											    <td>5.5</td>
+											</tr>
+											<tr>
+											    <td>Kariai</td>
+											    <td>29.7 km S of Kariai</td>
+											    <td>2022-01-16 11:48:05.000</td>
+											    <td>5.4</td>
+											</tr>
+											<tr>
+											    <td>Argostoli</td>
+											    <td>60.9 km WSW of Argostoli</td>
+											    <td>2022-09-08 07:36:20.000</td>
+											    <td>5.4</td>
+											</tr>
+											<tr>
+											    <td>Chania</td>
+											    <td>105.3 km SW of Chania</td>
+											    <td>2024-07-21 04:01:29.000</td>
+											    <td>5.3</td>
+											</tr>
+											<tr>
+											    <td>Florina</td>
+											    <td>1.5 km WSW of Florina</td>
+											    <td>2022-01-09 21:43:47.000</td>
+											    <td>5.3</td>
+											</tr>
+											<tr>
+											    <td>Kithira</td>
+											    <td>107.7 km SW of Kithira</td>
+											    <td>2023-03-14 16:36:01.000</td>
+											    <td>5.2</td>
+											</tr>
+											<tr>
+											    <td>Poliyiros</td>
+											    <td>31.1 km SSW of Poliyiros</td>
+											    <td>2024-11-03 17:03:51.000</td>
+											    <td>5.2</td>
+											</tr>
+											<tr>
+											    <td>Karpathos</td>
+											    <td>108.8 km SW of Karpathos</td>
+											    <td>2022-09-03 04:13:09.000</td>
+											    <td>5.2</td>
+											</tr>
+											</table>
+											</div>
+													
+											</ul>
+
+												<button class="toggle-query-button" onclick="toggleQuery('query4')"><li><p> Listed the top 3 strongest earthquakes in each region.</p></li></button>
 
 												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
 												<div id="query4" class="query-container">
