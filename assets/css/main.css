@@ -3998,30 +3998,4 @@ input, select, textarea {
 
 
 
-.query-container {
-    display: none; /* Αρχικά κρύβει τα queries */
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #305980;
-    border-radius: 10px;
-}
-.toggle-button {
-  background: none;      /* Αφαιρεί το background */
-  color: #e3e3e3;          /* Διατηρεί το επιθυμητό χρώμα για το κείμενο */
-  border: none;           /* Αφαιρεί το περίγραμμα */
-  /* padding: 5px;          Μικρότερο padding για να μην φαίνεται "τεκστιό" */
-  cursor: pointer;
-  font-size: inherit;    /* Να κληρονομεί το μέγεθος του κειμένου */
-  text-transform: none !important;	
-}
-.toggle-button:hover {
-    background-color: #0056b3;
-}
-.query-results pre,
-.query-results code {
-  white-space: pre-wrap;      /* Επιτρέπει το wrapping των γραμμών */
-  word-break: break-word;      /* Διασπά τις λέξεις αν χρειάζεται */
-  overflow-x: auto;           /* Προσθέτει οριζόντια κύλιση όταν είναι απαραίτητο */
-}
 
