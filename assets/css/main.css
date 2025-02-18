@@ -4001,7 +4001,7 @@ input, select, textarea {
 .query-container {
     display: none; /* Αρχικά κρύβει τα queries */
     margin-top: 5px;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #ccc;
     background-color: #305980;
     border-radius: 5px;
