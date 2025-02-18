@@ -4007,14 +4007,12 @@ input, select, textarea {
     border-radius: 10px;
 }
 .toggle-button {
-  background-color: #305980; /* Ανοιχτό γκρι αντί για λευκό */
-  color: #e3e3e3;             /* Σκούρα γράμματα για καλύτερη αντίθεση */
-  border: 1px solid #ccc;  /* Ελαφρύ border για οριοθέτηση */
-  padding: 15px;           /* Εσωτερικό padding ώστε να μην είναι το περιεχόμενο "τερστιό" */
-  max-width: 50px;        /* Ορισμός μέγιστου πλάτους ώστε να μην απλώνεται πάρα πολύ */
-  /*margin: 20px auto;       /* Κεντράρισμα του container με εξωτερικά περιθώρια */*/
+  background: none;      /* Αφαιρεί το background */
+  color: #e3e3e3;        /* Διατηρεί το χρώμα του κειμένου */
+  border: none;          /* Αφαιρεί το border */
+  padding: 5px;          /* Μικρότερο padding για να μην φαίνεται "τεκστιό" */
   cursor: pointer;
-   
+  font-size: inherit;    /* Να κληρονομεί το μέγεθος του κειμένου */
 }
 .toggle-button:hover {
     background-color: #0056b3;
