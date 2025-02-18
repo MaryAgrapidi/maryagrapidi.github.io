@@ -109,23 +109,23 @@
 									<h4> 1. Earthquake Activity by Region </h4>
 											
 												<ul>
-												<!--<li><p> Identified the regions with the highest number of recorded earthquakes.</p></li>-->
+												<li><p> Identified the regions with the highest number of recorded earthquakes.</p></li>
 													
 												<!-- Κουμπί για εμφάνιση Query -->
-												<button class="toggle-button" onclick="toggleQuery('query1')"><li><p> Identified the regions with the highest number of recorded earthquakes.</p></li></button>
+												<button class="toggle-button" onclick="toggleQuery('query1')">Show query</button>
 
 												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
 												<div id="query1" class="query-container">
-												<pre>
-													<code>
-													SELECT r.region_name, 
-													COUNT(e.earthquake_id) AS total_earthquakes 
-													FROM Earthquake_Facts e 
-													JOIN Region_Dim r ON e.region_id = r.region_id 
-													GROUP BY r.region_name 
-													ORDER BY total_earthquakes DESC;
-													</code>
-												</pre>
+	<pre>
+		<code>
+			SELECT r.region_name, 
+			       COUNT(e.earthquake_id) AS total_earthquakes 
+			FROM Earthquake_Facts e 
+			JOIN Region_Dim r ON e.region_id = r.region_id 
+			GROUP BY r.region_name 
+			ORDER BY total_earthquakes DESC;
+		</code>
+	</pre>
 	
 											<h3>Sample Results</h3>
 											<table border="1">
