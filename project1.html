@@ -123,7 +123,7 @@ SELECT TOP 5 r.Region_name,
        COUNT(e.[Magnitude (ML)]) AS [Total Earthquakes]
 FROM Earthquakes_Data e
 JOIN Region_Dim r ON e.region_name = r.region_name
-WHERE YEAR(e.[Origin Time (GMT)]) = YEAR(GETDATE())  -- Only for the last year
+WHERE YEAR(e.[Origin Time (GMT)]) = YEAR(GETDATE())
 GROUP BY r.region_name
 ORDER BY [Total Earthquakes] DESC;
 </code>
@@ -172,8 +172,8 @@ ORDER BY [Total Earthquakes] DESC;
 <pre>
 <code>
 SELECT	r.region_name,
-		max(e.location) as Location,
-		max(e.[Magnitude (ML)]) as [Highest-magnitude]
+	max(e.location) as Location,
+	max(e.[Magnitude (ML)]) as [Highest-magnitude]
 FROM Earthquakes_Data e
 JOIN Region_Dim r ON e.region_name = r.region_name
 WHERE e.[Magnitude (ML)] > 4.5
