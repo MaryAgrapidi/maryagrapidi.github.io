@@ -4019,18 +4019,3 @@ input, select, textarea {
     border-radius: 5px;
 }
 
-.query-container pre {
-  background-color: #282c34; /* Σκούρο φόντο για τον κώδικα */
-  color: #f8f8f2; /* Ανοιχτό χρώμα για τον κώδικα */
-  border-radius: 5px;
-  padding: 15px;
-  white-space: pre-wrap; /* Επιτρέπει τη μετατροπή της γραμμής */
-  word-wrap: break-word;  /* Σπάει τις μεγάλες λέξεις */
-  font-family: 'Courier New', monospace; /* Μονοτονική γραμματοσειρά για SQL */
-  font-size: 14px; /* Ρύθμιση μεγέθους γραμματοσειράς */
-}
-
-.query-container code {
-  display: block; /* Καθορισμός εμφάνισης block για να καταλαμβάνει όλο το πλάτος */
-}
-
