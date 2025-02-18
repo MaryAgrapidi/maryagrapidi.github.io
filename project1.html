@@ -119,8 +119,8 @@
 <pre>
 <code>
 SELECT TOP 5 r.Region_name, 
-		max(e.location) as Location,
-       COUNT(e.[Magnitude (ML)]) AS [Total Earthquakes]
+	     max(e.location) as Location,
+             COUNT(e.[Magnitude (ML)]) AS [Total Earthquakes]
 FROM Earthquakes_Data e
 JOIN Region_Dim r ON e.region_name = r.region_name
 WHERE YEAR(e.[Origin Time (GMT)]) = YEAR(GETDATE())
@@ -219,7 +219,82 @@ ORDER BY r.region_name desc;
 											    <ul>
 												<li><p> Found the strongest earthquake recorded per region.</p></li>
 												
-												<li><p> Listed the top 3 strongest earthquakes in each region.</p></li>
+
+												    <button class="toggle-query-button" onclick="toggleQuery('query4')"><li><p> Listed the top 3 strongest earthquakes in each region.</p></li></button>
+
+												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												<div id="query4" class="query-container">
+<pre>
+<code>
+WITH MaxMagnitudePerRegion AS (
+SELECT region_name, 
+       MAX([Magnitude (ML)]) AS max_magnitude
+FROM Earthquakes_Data
+WHERE YEAR([Origin Time (GMT)]) = 2025
+GROUP BY region_name
+),
+
+RankedQuakes AS (
+SELECT r.region_name,
+       e.[Origin Time (GMT)], 
+	   e.[Magnitude (ML)], 
+	   e.[Location],
+       mmr.max_magnitude,
+       ROW_NUMBER() OVER (PARTITION BY r.region_name 
+			ORDER BY e.[Magnitude (ML)] DESC) AS row_num
+FROM Earthquakes_Data e
+JOIN Region_Dim r ON e.region_name = r.region_name
+JOIN MaxMagnitudePerRegion mmr ON r.region_name = mmr.region_name
+WHERE YEAR(e.[Origin Time (GMT)]) = 2025
+)
+SELECT region_name,
+	   [Origin Time (GMT)], 
+	   [Magnitude (ML)], 
+	   [Location]
+FROM RankedQuakes
+WHERE row_num <= 3
+ORDER BY max_magnitude DESC, 
+		 region_name ASC, 
+		 [Magnitude (ML)] DESC;
+</code>
+</pre>
+	
+											<h3>Sample Results</h3>
+											<table border="1">
+											<tr>
+											<th>Region_Name</th>
+											<th>Location</th>
+											<th>Highest-magnitude</th>
+											</tr>
+											<tr>
+											<td>Thira</td>
+											<td>39.5 km NE of Thira</td>
+											<td>5.2</td>
+											</tr>
+											<tr>
+											<td>Thira</td>
+											<td>39.5 km NE of Thira</td>
+											<td>5.2</td>
+											</tr>
+											<tr>
+											<td>Pyrgos</td>
+											<td>37.9 km SSE of Pyrgos</td>
+											<td>4.6</td>
+											</tr>
+											<tr>
+											<td>Mitilini</td>
+											<td>27.0 km N of Mitilini</td>
+											<td>5.1</td>
+											</tr>
+											<tr>
+											<td>Kariai</td>
+											<td>12.8 km WNW of Kariai</td>
+											<td>4.7</td>
+											</tr>
+											</table>
+											</div>
+													
+											</ul>
 												</ul>
 
 												
