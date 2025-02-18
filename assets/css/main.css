@@ -4019,4 +4019,10 @@ input, select, textarea {
 .toggle-button:hover {
     background-color: #0056b3;
 }
+.query-results pre,
+.query-results code {
+  white-space: pre-wrap;      /* Επιτρέπει το wrapping των γραμμών */
+  word-break: break-word;      /* Διασπά τις λέξεις αν χρειάζεται */
+  overflow-x: auto;           /* Προσθέτει οριζόντια κύλιση όταν είναι απαραίτητο */
+}
 
