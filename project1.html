@@ -117,7 +117,7 @@
 												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
 												<div id="query1" class="query-container">
 <pre>
-<code class="language-sql">
+<code ">
 SELECT r.region_name, 
        COUNT(e.earthquake_id) AS total_earthquakes 
 FROM Earthquake_Facts e 
@@ -232,12 +232,6 @@ ORDER BY total_earthquakes DESC;
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			
-		<!-- Prism.js CSS -->
-			<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
-
-		<!-- Prism.js JavaScript -->
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
-
 <script>
     function toggleQuery(id) {
         var queryDiv = document.getElementById(id);
