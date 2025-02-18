@@ -3996,6 +3996,15 @@ input, select, textarea {
 		}
 
 
-
+.toggle-query-button {
+  background: none;      /* Αφαιρεί το background */
+  border: none;           /* Αφαιρεί το περίγραμμα */
+  cursor: pointer;
+  font-size: inherit;    /* Να κληρονομεί το μέγεθος του κειμένου */
+  text-transform: none;	
+}
+.toggle-query-button:hover {
+    background-color: #0056b3;
+}
 
 
