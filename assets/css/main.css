@@ -4017,7 +4017,7 @@ input, select, textarea {
 .query-container {
     display: none; /* Αρχικά κρύβει τα queries */
     /*border-radius: 5px;*/
-    width: 100%; /* Καταλαμβάνει όλο το πλάτος */
+    width: 50%; /* Καταλαμβάνει όλο το πλάτος */
     margin: 20px 0; /* Ενισχυμένο κενό πάνω και κάτω */
 }
 
