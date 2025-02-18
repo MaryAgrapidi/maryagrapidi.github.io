@@ -4008,7 +4008,6 @@ input, select, textarea {
 }
 .query-container {
     display: none; /* Αρχικά κρύβει τα queries */
-    background-color: #305980;
     border-radius: 10px;
 }
 
