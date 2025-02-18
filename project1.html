@@ -218,7 +218,6 @@ ORDER BY r.region_name desc;
 									<h4>2. Strongest Earthquakes Analysis</h4>
 											    <ul>
 												    <button class="toggle-query-button" onclick="toggleQuery('query3')"><li><p> Found the strongest earthquake recorded per region.</p></li></button>
-
 												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
 												<div id="query3" class="query-container">
 <pre>
@@ -305,12 +304,10 @@ ORDER BY max_magnitude DESC;
 											    <td>5.2</td>
 											</tr>
 											</table>
-											</div>
-													
+											</div>	
 											</ul>
 											<ul>
-												<button class="toggle-query-button" onclick="toggleQuery('query4')"><li><p> Listed the top 3 strongest earthquakes in each region.</p></li></button>
-
+											<button class="toggle-query-button" onclick="toggleQuery('query4')"><li><p> Listed the top 3 strongest earthquakes in each region.</p></li></button>
 												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
 												<div id="query4" class="query-container">
 <pre>
@@ -538,9 +535,105 @@ ORDER BY max_magnitude DESC,
 												
 									<h4>3. Time-Based Earthquake Trends</h4>
 											    <ul>
-												<li><p> Identified peak times and months for earthquake activity.</p></li>											
+											<button class="toggle-query-button" onclick="toggleQuery('query5')"><li><p> Identified peak times and months for earthquake activity.</p></li></button>
+												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												<div id="query5" class="query-container">
+<pre>
+<code>
+SELECT r.region_name, 
+       AVG(Monthly_Count) AS avg_per_month
+FROM (
+SELECT e.region_name, 
+       YEAR(e.[Origin Time (GMT)]) * 12 + MONTH(e.[Origin Time (GMT)]) AS year_month,
+       COUNT(e.[Magnitude (ML)]) AS Monthly_Count
+  FROM Earthquakes_Data e
+  WHERE YEAR(e.[Origin Time (GMT)]) = YEAR(GETDATE())
+  GROUP BY e.region_name, YEAR(e.[Origin Time (GMT)]) * 12 + MONTH(e.[Origin Time (GMT)])
+) AS Monthly_Summary
+JOIN Region_Dim r ON Monthly_Summary.region_name = r.region_name
+GROUP BY r.region_name
+ORDER BY avg_per_month DESC;
+</code>
+</pre>
+											<h3>Sample Results</h3>
+											<table border="1">
+											<tr>
+											<th>Region_Name</th>
+											<th>Average Earthquake per month</th>
+											</tr>
 												
-												<li><p> Analyzed the most earthquake-prone days and hours.</p></li>
+											    <td>Thira</td>
+											    <td>844</td>
+											</tr>
+											<tr>
+											    <td>Pyrgos</td>
+											    <td>289</td>
+											</tr>
+											<tr>
+											    <td>Aegion</td>
+											    <td>111</td>
+											</tr>
+											<tr>
+											    <td>Kariai</td>
+											    <td>82</td>
+											</tr>
+											<tr>
+											    <td>Zakynthos</td>
+											    <td>74</td>
+											</tr>
+											<tr>
+											    <td>Drama</td>
+											    <td>57</td>
+											</tr>
+											<tr>
+											    <td>Patras</td>
+											    <td>49</td>
+											</tr>
+											<tr>
+											    <td>Methoni</td>
+											    <td>46</td>
+											</tr>
+											<tr>
+											    <td>Chalkida</td>
+											    <td>45</td>
+											</tr>
+											<tr>
+											    <td>Karpenision</td>
+											    <td>42</td>
+											</tr>
+											<tr>
+											    <td>Poliyiros</td>
+											    <td>42</td>
+											</tr>
+											<tr>
+											    <td>Argostoli</td>
+											    <td>39</td>
+											</tr>
+											<tr>
+											    <td>Athens</td>
+											    <td>38</td>
+											</tr>
+											<tr>
+											    <td>Mesolonghi</td>
+											    <td>35</td>
+											</tr>
+											<tr>
+											    <td>Skiathos</td>
+											    <td>32</td>
+											</tr>
+											<tr>
+											    <td>Andravida</td>
+											    <td>30</td>
+											</tr>
+											<tr>
+											    <td>Chania</td>
+											    <td>29</td>
+											</tr>
+											</table>
+											</div>		
+											</ul>
+												
+									<li><p> Analyzed the most earthquake-prone days and hours.</p></li>
 												</ul>
 												
 									<h4>4. Depth vs. Magnitude Correlation</h4>		
