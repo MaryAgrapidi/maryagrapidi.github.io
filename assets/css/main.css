@@ -4002,7 +4002,6 @@ input, select, textarea {
 }
 .toggle-button {
   background: none;      /* Αφαιρεί το background */
-  text-transform: none;
 }
 
 
