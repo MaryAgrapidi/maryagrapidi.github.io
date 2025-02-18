@@ -109,6 +109,38 @@
 											
 												<ul>
 												<li><p> Identified the regions with the highest number of recorded earthquakes.</p></li>
+													
+												<!-- Κουμπί για εμφάνιση Query -->
+												<button class="toggle-button" onclick="toggleQuery('query1')">Show Query</button>
+
+												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												<div id="query1" class="query-container">
+												<pre>
+													<code>
+													SELECT r.region_name, 
+													COUNT(e.earthquake_id) AS total_earthquakes 
+													FROM Earthquake_Facts e 
+													JOIN Region_Dim r ON e.region_id = r.region_id 
+													GROUP BY r.region_name 
+													ORDER BY total_earthquakes DESC;
+													</code>
+												</pre>
+											<h3>Sample Results</h3>
+											<table border="1">
+											<tr>
+											<th>Region</th>
+											<th>Total Earthquakes</th>
+											</tr>
+											<tr>
+											<td>Kefalonia</td>
+											<td>145</td>
+											</tr>
+											<tr>
+											<td>Chalkida</td>
+											<td>98</td>
+											</tr>
+											</table>
+											</div>
 
 												<li><p> Determined the regions with the most high-magnitude (>6.0) earthquakes.</p></li>
 												
