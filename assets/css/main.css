@@ -3997,3 +3997,25 @@ input, select, textarea {
 
 
 
+
+.query-container {
+    display: none; /* Αρχικά κρύβει τα queries */
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+.toggle-button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+.toggle-button:hover {
+    background-color: #0056b3;
+}
+
