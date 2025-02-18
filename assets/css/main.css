@@ -4000,8 +4000,8 @@ input, select, textarea {
 
 .query-container {
     display: none; /* Αρχικά κρύβει τα queries */
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 5px;
+    padding: 5px;
     border: 1px solid #ccc;
     background-color: #305980;
     border-radius: 5px;
@@ -4011,7 +4011,7 @@ input, select, textarea {
   color: #e3e3e3;             /* Σκούρα γράμματα για καλύτερη αντίθεση */
   border: 1px solid #ccc;  /* Ελαφρύ border για οριοθέτηση */
   padding: 15px;           /* Εσωτερικό padding ώστε να μην είναι το περιεχόμενο "τερστιό" */
-  max-width: 800px;        /* Ορισμός μέγιστου πλάτους ώστε να μην απλώνεται πάρα πολύ */
+  max-width: 80px;        /* Ορισμός μέγιστου πλάτους ώστε να μην απλώνεται πάρα πολύ */
   /*margin: 20px auto;       /* Κεντράρισμα του container με εξωτερικά περιθώρια */*/
   cursor: pointer;
    
