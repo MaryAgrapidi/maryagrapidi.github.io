@@ -632,10 +632,65 @@ ORDER BY avg_per_month DESC;
 											</table>
 											</div>		
 											</ul>
+											<ul>
+											<button class="toggle-query-button" onclick="toggleQuery('query6')"><li><p> Analyzed the most earthquake-prone days.</p></li></button>
+												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												<div id="query6" class="query-container">
+<pre>
+<code>
+SELECT DATENAME(WEEKDAY, [Origin Time (GMT)]) AS day_of_week, 
+       COUNT(*) AS earthquake_count
+FROM Earthquakes_Data
+WHERE YEAR([Origin Time (GMT)]) = 2024 
+GROUP BY DATENAME(WEEKDAY, 
+	[Origin Time (GMT)])
+ORDER BY earthquake_count DESC;
+</code>
+</pre>
+<h3>Sample Results</h3>
+											<table border="1">
+											<tr>
+											<th>Day of week</th>
+											<th>Earthquake count</th>
+											</tr>
 												
-									<li><p> Analyzed the most earthquake-prone days and hours.</p></li>
-												</ul>
-												
+											   <tr>
+											    <td>Tuesday</td>
+											    <td>3524</td>
+											</tr>
+											<tr>
+											    <td>Saturday</td>
+											    <td>3430</td>
+											</tr>
+											<tr>
+											    <td>Sunday</td>
+											    <td>3424</td>
+											</tr>
+											<tr>
+											    <td>Wednesday</td>
+											    <td>3328</td>
+											</tr>
+											<tr>
+											    <td>Monday</td>
+											    <td>3300</td>
+											</tr>
+											<tr>
+											    <td>Friday</td>
+											    <td>3143</td>
+											</tr>
+											<tr>
+											    <td>Thursday</td>
+											    <td>3092</td>
+											</tr>
+
+											</table>
+											</div>		
+											</ul>
+
+
+
+
+
 									<h4>4. Depth vs. Magnitude Correlation</h4>		
 												<ul>
 												<li><p>Examined if earthquakes are occurring at greater depths over time.</p></li>
