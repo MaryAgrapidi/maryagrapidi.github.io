@@ -4010,9 +4010,10 @@ input, select, textarea {
   background: none;      /* Αφαιρεί το background */
   color: #e3e3e3;        /* Διατηρεί το χρώμα του κειμένου */
   border: none;          /* Αφαιρεί το border */
-  padding: 5px;          /* Μικρότερο padding για να μην φαίνεται "τεκστιό" */
+  /* padding: 5px;          Μικρότερο padding για να μην φαίνεται "τεκστιό" */
   cursor: pointer;
   font-size: inherit;    /* Να κληρονομεί το μέγεθος του κειμένου */
+  text-transform: none !important;	
 }
 .toggle-button:hover {
     background-color: #0056b3;
