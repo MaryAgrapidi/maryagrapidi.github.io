@@ -333,3 +333,15 @@
 			});
 
 })(jQuery);
+
+<script>
+    function toggleQuery(id) {
+        var queryDiv = document.getElementById(id);
+        if (queryDiv.style.display === "none" || queryDiv.style.display === "") {
+            queryDiv.style.display = "block";
+        } else {
+            queryDiv.style.display = "none";
+        }
+    }
+</script>
+
