@@ -118,34 +118,101 @@
 												<div id="query1" class="query-container">
 <pre>
 <code>
-SELECT r.region_name, 
-       COUNT(e.earthquake_id) AS total_earthquakes 
-FROM Earthquake_Facts e 
-JOIN Region_Dim r ON e.region_id = r.region_id 
-GROUP BY r.region_name 
-ORDER BY total_earthquakes DESC;
+SELECT TOP 5 r.Region_name, 
+		max(e.location) as Location,
+       COUNT(e.[Magnitude (ML)]) AS [Total Earthquakes]
+FROM Earthquakes_Data e
+JOIN Region_Dim r ON e.region_name = r.region_name
+WHERE YEAR(e.[Origin Time (GMT)]) = YEAR(GETDATE())  -- Only for the last year
+GROUP BY r.region_name
+ORDER BY [Total Earthquakes] DESC;
 </code>
 </pre>
 	
 											<h3>Sample Results</h3>
 											<table border="1">
 											<tr>
-											<th>Region</th>
+											<th>Region_Name</th>
+											<th>Location</th>
 											<th>Total Earthquakes</th>
 											</tr>
 											<tr>
-											<td>Kefalonia</td>
-											<td>145</td>
+											<td>Thira</td>
+											<td>9.0 km WSW of Thira</td>
+											<td>1688</td>
 											</tr>
 											<tr>
-											<td>Chalkida</td>
-											<td>98</td>
+											<td>Pyrgos</td>
+											<td>60.5 km SSW of Pyrgos</td>
+											<td>578</td>
+											</tr>
+											<tr>
+											<td>Aegion</td>
+											<td>9.9 km SSW of Aegion</td>
+											<td>222</td>
+											</tr>
+											<tr>
+											<td>Kariai</td>
+											<td>9.9 km WNW of Kariai</td>
+											<td>164</td>
+											</tr>
+											<tr>
+											<td>Zakynthos</td>
+											<td>90.2 km SW of Zakynthos</td>
+											<td>149</td>
 											</tr>
 											</table>
 											</div>
 
-												<li><p> Determined the regions with the most high-magnitude (>6.0) earthquakes.</p></li>
 												
+											<button class="toggle-query-button" onclick="toggleQuery('query1')"><li><p> Determined the regions with the most high-magnitude (>4.5) earthquakes.</p></li></button>
+
+												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												<div id="query2" class="query-container">
+<pre>
+<code>
+SELECT	r.region_name,
+		max(e.location) as Location,
+		max(e.[Magnitude (ML)]) as [Highest-magnitude]
+FROM Earthquakes_Data e
+JOIN Region_Dim r ON e.region_name = r.region_name
+WHERE e.[Magnitude (ML)] > 4.5
+AND YEAR(e.[Origin Time (GMT)]) = YEAR(GETDATE())
+GROUP BY r.region_name
+ORDER BY r.region_name desc;
+</code>
+</pre>
+	
+											<h3>Sample Results</h3>
+											<table border="1">
+											<tr>
+											<th>Region_Name</th>
+											<th>Location</th>
+											<th>Highest-magnitude</th>
+											</tr>
+											<tr>
+											<td>Thira</td>
+											<td>39.5 km NE of Thira</td>
+											<td>5.2</td>
+											</tr>
+											<tr>
+											<td>Pyrgos</td>
+											<td>37.9 km SSE of Pyrgos</td>
+											<td>4.6</td>
+											</tr>
+											<tr>
+											<td>Mitilini</td>
+											<td>27.0 km N of Mitilini</td>
+											<td>5.1</td>
+											</tr>
+											<tr>
+											<td>Kariai</td>
+											<td>12.8 km WNW of Kariai</td>
+											<td>4.7</td>
+											</tr>
+											</table>
+											</div>
+													
 												</ul>
 												
 									<h4>2. Strongest Earthquakes Analysis</h4>
