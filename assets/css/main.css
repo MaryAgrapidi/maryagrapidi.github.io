@@ -4004,7 +4004,7 @@ input, select, textarea {
     padding: 10px;
     border: 1px solid #ccc;
     background-color: #305980;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .toggle-button {
   background-color: #305980; /* Ανοιχτό γκρι αντί για λευκό */
