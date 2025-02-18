@@ -4009,9 +4009,7 @@ input, select, textarea {
 }
 .toggle-query-button:hover {
     background-color: #0056b3;
-    outline: none !important;
-    border: none !important;
-    box-shadow: none !important;
+   
 }
 .query-container {
     display: none; /* Αρχικά κρύβει τα queries */
