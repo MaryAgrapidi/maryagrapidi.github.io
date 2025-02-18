@@ -4004,11 +4004,10 @@ input, select, textarea {
   text-transform: none;	
 }
 .toggle-query-button:hover {
-    background-color: #305980;
+    background-color: #63a6e6;
 }
 .query-container {
     display: none; /* Αρχικά κρύβει τα queries */
     border-radius: 5px;
 }
-
 
