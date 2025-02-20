@@ -1218,6 +1218,21 @@ ORDER BY region_name;
             queryDiv.style.display = "none";
         }
     }
-</script>		
+</script>	
+
+ <script>
+        // JavaScript κώδικας εδώ
+        const menu = document.getElementById('menu');
+        const sticky = menu.offsetTop;
+
+        window.onscroll = function() {
+            if (window.pageYOffset > sticky) {
+                menu.classList.add('fixed');
+            } else {
+                menu.classList.remove('fixed');
+            }
+        };
+    </script>
+												    
 	</body>
 </html>
