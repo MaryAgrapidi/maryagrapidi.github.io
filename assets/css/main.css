@@ -3847,7 +3847,7 @@ input, select, textarea {
 		opacity: 0;
 		overflow: hidden;
 		padding: 3em 2em;
-		position: fixed;
+		position: sticky;
 		top: 0;
 		visibility: hidden;
 		width: 100%;
