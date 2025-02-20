@@ -807,15 +807,98 @@ ORDER BY dc.region_name, dc.quake_year DESC;
 											</table>
 											</div>		
 											</ul>										
-											</ul>
+											
 												
 									<h4>5. Earthquake Clusters and Patterns</h4>
-												<ul>
-												<li><p>Detected regions experiencing earthquake swarms within 48-hour periods.</p></li>
-											    
-												<li><p> Identified locations with recurring earthquake activity.</p></li>											
-											
-												</ul>
+												<ul>												
+											<button class="toggle-query-button" onclick="toggleQuery('query8')"><li><p>Detected regions experiencing earthquake swarms within 48-hour periods.</p></li></button>
+												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												<div id="query8" class="query-container">
+<pre>
+<code>
+WITH QuakeClusters AS (
+    SELECT e1.[region_name], e1.[Origin Time (GMT)], COUNT(*) AS cluster_size
+    FROM Earthquakes_Data e1
+    JOIN Earthquakes_Data e2
+        ON e1.[region_name] = e2.[region_name]
+        AND e2.[Origin Time (GMT)] BETWEEN e1.[Origin Time (GMT)] AND DATEADD(HOUR, 48, e1.[Origin Time (GMT)])
+    GROUP BY e1.[region_name], e1.[Origin Time (GMT)]
+    HAVING COUNT(*) > 5
+)
+SELECT r.region_name, q.[Origin Time (GMT)], q.cluster_size
+FROM QuakeClusters q
+JOIN Region_Dim r ON q.[region_name] = r.[region_name]
+ORDER BY q.[Origin Time (GMT)] DESC,q.cluster_size DESC ;
+</code>
+</pre>
+											</div>		
+											</ul>
+																							
+											<ul>												
+											<button class="toggle-query-button" onclick="toggleQuery('query89')"><li><p> Identified locations with recurring earthquake activity.</p></li></button>
+												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												<div id="query9" class="query-container">
+													<pre>
+<code>
+WITH QuakeIntervals AS (
+    SELECT region_name, [Origin Time (GMT)], [Magnitude (ML)],
+           LAG([Origin Time (GMT)]) OVER (PARTITION BY region_name ORDER BY [Origin Time (GMT)]) AS prev_quake_time
+    FROM Earthquakes_Data
+    WHERE [Magnitude (ML)] > 4.7
+)
+SELECT r.region_name, q.[Origin Time (GMT)], q.[Magnitude (ML)],
+       DATEDIFF(DAY, q.prev_quake_time, q.[Origin Time (GMT)]) AS days_since_last_big_quake
+FROM QuakeIntervals q
+JOIN Region_Dim r ON q.region_name = r.region_name
+ORDER BY r.region_name, q.[Origin Time (GMT)];
+
+</code>
+</pre>
+<h3>Sample Results</h3>
+											<table border="1">
+											<tr>
+											<th>Region name</th>
+											<th>Origin Time (GMT)</th>
+											<th>Mgnitude (ML)</th>
+											<th>days_since_last_big_equake</th>
+											</tr>
+												    <tr><td>Amfissa</td><td>2022-10-08 22:02:28.000</td><td>5</td><td>NULL</td></tr>
+												    <tr><td>Andravida</td><td>2024-07-06 17:34:29.000</td><td>4.9</td><td>NULL</td></tr>
+												    <tr><td>Argostoli</td><td>2022-09-08 07:36:20.000</td><td>5.4</td><td>NULL</td></tr>
+												    <tr><td>Atalanti</td><td>2023-06-08 12:33:52.000</td><td>4.8</td><td>NULL</td></tr>
+												    <tr><td>Athens</td><td>2022-11-29 20:06:39.000</td><td>5</td><td>NULL</td></tr>
+												    <tr><td>Chalkida</td><td>2022-12-28 12:24:20.000</td><td>4.9</td><td>NULL</td></tr>
+												    <tr><td>Chalkida</td><td>2023-11-03 06:26:37.000</td><td>5.1</td><td>310</td></tr>
+												    <tr><td>Chania</td><td>2023-08-13 07:49:31.000</td><td>4.9</td><td>NULL</td></tr>
+												    <tr><td>Chania</td><td>2024-07-21 04:01:29.000</td><td>5.3</td><td>343</td></tr>
+												    <tr><td>Florina</td><td>2022-01-09 21:43:47.000</td><td>5.3</td><td>NULL</td></tr>
+												    <tr><td>Iraklion</td><td>2022-10-02 04:04:00.000</td><td>5</td><td>NULL</td></tr>
+												    <tr><td>Iraklion</td><td>2023-05-18 18:58:52.000</td><td>5.1</td><td>228</td></tr>
+												    <tr><td>Iraklion</td><td>2024-08-07 08:23:52.000</td><td>4.8</td><td>447</td></tr>
+												    <tr><td>Iraklion</td><td>2024-12-22 19:09:56.000</td><td>4.8</td><td>137</td></tr>
+												    <tr><td>Kariai</td><td>2022-01-16 11:48:05.000</td><td>5.4</td><td>NULL</td></tr>
+												    <tr><td>Karpathos</td><td>2022-06-19 23:24:35.000</td><td>4.8</td><td>NULL</td></tr>
+												    <tr><td>Karpathos</td><td>2022-09-03 04:13:09.000</td><td>5.2</td><td>76</td></tr>
+												    <tr><td>Karpathos</td><td>2022-11-13 02:08:08.000</td><td>4.8</td><td>71</td></tr>
+												    <tr><td>Karpathos</td><td>2022-11-20 23:25:01.000</td><td>5.5</td><td>7</td></tr>
+												    <tr><td>Karpathos</td><td>2024-10-19 07:08:30.000</td><td>4.8</td><td>699</td></tr>
+												    <tr><td>Kithira</td><td>2022-04-16 17:00:39.000</td><td>4.9</td><td>NULL</td></tr>
+												    <tr><td>Kithira</td><td>2022-04-27 01:51:53.000</td><td>5.2</td><td>11</td></tr>
+												    <tr><td>Kithira</td><td>2023-03-14 16:36:01.000</td><td>5.2</td><td>321</td></tr>
+												    <tr><td>Leonidhion</td><td>2024-01-16 05:20:51.000</td><td>4.8</td><td>NULL</td></tr>
+												    <tr><td>Mitilini</td><td>2023-01-07 01:52:58.000</td><td>4.9</td><td>NULL</td></tr>
+												    <tr><td>Mitilini</td><td>2023-01-10 07:38:30.000</td><td>4.8</td><td>3</td></tr>
+												    <tr><td>Mitilini</td><td>2025-01-21 20:38:43.000</td><td>5.1</td><td>742</td></tr>
+												    <tr><td>Poliyiros</td><td>2024-11-03 17:03:51.000</td><td>5.2</td><td>NULL</td></tr>
+												    <tr><td>Pyrgos</td><td>2024-03-29 07:12:48.000</td><td>5.8</td><td>NULL</td></tr>
+												    <tr><td>Rethimnon</td><td>2024-08-28 16:29:55.000</td><td>5.2</td><td>NULL</td></tr>
+												    <tr><td>Rodhos</td><td>2023-01-25 12:37:06.000</td><td>5.9</td><td>NULL</td></tr>
+												    <tr><td>Rodhos</td><td>2024-06-12 19:19:11.000</td><td>4.8</td><td>504</td></tr>
+												    <tr><td>Rodhos</td><td>2024-10-15 16:54:22.000</td><td>4.8</td><td>125</td></tr>
+												    <tr><td>Samos</td><td>2022-08-14 03:24:22.000</td><td>4.8</td><td>NULL</td></tr>
+												</table>
+											</div>		
+											</ul>	
 									
 									
 									<h4>6. Spatial Analysis of Earthquakes</h4>
