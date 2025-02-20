@@ -1036,6 +1036,166 @@ ORDER BY distance_km;
 												
 									<h4> 7. Risk Assessment for Future Earthquakes</h4>
 											     <ul>
+												     
+	<ul>
+									<button class="toggle-query-button" onclick="toggleQuery('query12')"><li><p>Identified of Major Earthquake Events Exceeding Regional Averages</p></li></button>
+												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												<div id="query12" class="query-container">
+<pre>
+<code>
+WITH AvgMagnitude AS (
+    SELECT [region_name], ROUND(AVG([Magnitude (ML)]), 2) AS avg_magnitude
+    FROM Earthquakes_Data
+    GROUP BY [region_name]
+),
+RankedEarthquakes AS (
+    SELECT 
+        r.region_name,
+        e.[Origin Time (GMT)], 
+        e.[Magnitude (ML)], 
+        a.avg_magnitude,
+        ROW_NUMBER() OVER (PARTITION BY r.region_name ORDER BY e.[Magnitude (ML)] DESC) AS rn
+    FROM Earthquakes_Data e
+    JOIN AvgMagnitude a ON e.[region_name] = a.[region_name]
+    JOIN Region_Dim r ON e.[region_name] = r.[region_name]
+    WHERE e.[Magnitude (ML)] > (a.avg_magnitude + 1.5)
+    AND YEAR(e.[Origin Time (GMT)]) = YEAR(GETDATE())
+)
+SELECT region_name, [Origin Time (GMT)], [Magnitude (ML)], avg_magnitude
+FROM RankedEarthquakes
+WHERE rn = 1
+ORDER BY region_name;
+</code>
+</pre>
+<h3>Sample Results</h3>
+											<table border="1">
+											    <tr>
+																						       <table>
+											    <tr>
+											        <th>Region Name</th>
+											        <th>Origin Time (GMT)</th>
+											        <th>Magnitude (ML)</th>
+											        <th>Average Magnitude</th>
+											    </tr>
+											    <tr>
+											        <td>Aegion</td>
+											        <td>2025-01-09 05:54:14.000</td>
+											        <td>3,8</td>
+											        <td>1,18</td>
+											    </tr>
+											    <tr>
+											        <td>Amfissa</td>
+											        <td>2025-01-31 07:28:56.000</td>
+											        <td>3,2</td>
+											        <td>1,28</td>
+											    </tr>
+											    <tr>
+											        <td>Andravida</td>
+											        <td>2025-01-10 19:23:52.000</td>
+											        <td>3,5</td>
+											        <td>1,61</td>
+											    </tr>
+											    <tr>
+											        <td>Argostoli</td>
+											        <td>2025-01-27 15:42:55.000</td>
+											        <td>3,3</td>
+											        <td>1,78</td>
+											    </tr>
+											    <tr>
+											        <td>Arta</td>
+											        <td>2025-02-05 12:14:21.000</td>
+											        <td>3,2</td>
+											        <td>1,63</td>
+											    </tr>
+											    <tr>
+											        <td>Chalkida</td>
+											        <td>2025-01-30 15:55:28.000</td>
+											        <td>4,4</td>
+											        <td>1,54</td>
+											    </tr>
+											    <tr>
+											        <td>Chania</td>
+											        <td>2025-01-03 11:58:10.000</td>
+											        <td>4</td>
+											        <td>2,47</td>
+											    </tr>
+											    <tr>
+											        <td>Drama</td>
+											        <td>2025-01-17 19:24:57.000</td>
+											        <td>3,4</td>
+											        <td>1,71</td>
+											    </tr>
+											    <tr>
+											        <td>Ioannina</td>
+											        <td>2025-01-29 23:50:19.000</td>
+											        <td>3,2</td>
+											        <td>1,69</td>
+											    </tr>
+											    <tr>
+											        <td>Kariai</td>
+											        <td>2025-02-15 16:11:48.000</td>
+											        <td>4,7</td>
+											        <td>1,86</td>
+											    </tr>
+											    <tr>
+											        <td>Lamia</td>
+											        <td>2025-01-14 22:35:09.000</td>
+											        <td>3,1</td>
+											        <td>1,55</td>
+											    </tr>
+											    <tr>
+											        <td>Mitilini</td>
+											        <td>2025-01-21 20:38:43.000</td>
+											        <td>5,1</td>
+											        <td>2,16</td>
+											    </tr>
+											    <tr>
+											        <td>Patras</td>
+											        <td>2025-02-07 04:24:25.000</td>
+											        <td>4</td>
+											        <td>1,25</td>
+											    </tr>
+											    <tr>
+											        <td>Poliyiros</td>
+											        <td>2025-01-17 20:17:28.000</td>
+											        <td>3,3</td>
+											        <td>1,67</td>
+											    </tr>
+											    <tr>
+											        <td>Pyrgos</td>
+											        <td>2025-01-06 09:47:56.000</td>
+											        <td>4,6</td>
+											        <td>1,74</td>
+											    </tr>
+											    <tr>
+											        <td>Skyros</td>
+											        <td>2025-02-03 08:01:02.000</td>
+											        <td>4,5</td>
+											        <td>2,1</td>
+											    </tr>
+											    <tr>
+											        <td>Thessaloniki</td>
+											        <td>2025-01-19 16:10:39.000</td>
+											        <td>2,9</td>
+											        <td>1,29</td>
+											    </tr>
+											    <tr>
+											        <td>Thira</td>
+											        <td>2025-02-05 19:09:38.000</td>
+											        <td>5,2</td>
+											        <td>2,87</td>
+											    </tr>
+											    <tr>
+											        <td>Zakynthos</td>
+											        <td>2025-01-31 07:36:03.000</td>
+											        <td>4,1</td>
+											        <td>2,05</td>
+											    </tr>
+											</table>
+											</div>
+									                </ul>										
+
+												     
 												<li><p>Estimated the probability of a future earthquake >6.0 per region based on historical data.</p></li>
 											    
 												<li><p> Highlighted regions with a higher likelihood of strong earthquakes.</p></li>											
