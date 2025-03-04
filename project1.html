@@ -12,7 +12,7 @@
         }
 
         .explanation.visible {
-            display: block; /* Όταν η κλάση 'visible' είναι ενεργή, να εμφανίζεται */
+            display: block;
         }
     </style>
 	</head>
@@ -119,10 +119,10 @@
 											<ul>
 												<!--<li><p> Identified the regions with the highest number of recorded earthquakes.</p></li>-->
 													
-												<!-- Κουμπί για εμφάνιση Query -->
+												
 												<button class="toggle-query-button" onclick="toggleQuery('query1')"><li><p> Identified the regions with the highest number of recorded earthquakes.</p></li></button>
 
-												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												
 												<div id="query1" class="query-container">
 <pre>
 <code>
@@ -176,7 +176,7 @@ ORDER BY [Total Earthquakes] DESC;
 												
 											<button class="toggle-query-button" onclick="toggleQuery('query2')"><li><p> Determined the regions with the most high-magnitude (>4.5) earthquakes.</p></li></button>
 
-												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+											
 												<div id="query2" class="query-container">
 <pre>
 <code>
@@ -226,7 +226,7 @@ ORDER BY r.region_name desc;
 									<h4>2. Strongest Earthquakes Analysis</h4>
 											    <ul>
 												    <button class="toggle-query-button" onclick="toggleQuery('query3')"><li><p> Found the strongest earthquake recorded per region.</p></li></button>
-												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												
 												<div id="query3" class="query-container">
 <pre>
 <code>
@@ -315,7 +315,7 @@ ORDER BY max_magnitude DESC;
 											</div>	
 
 											<button class="toggle-query-button" onclick="toggleQuery('query4')"><li><p> Listed the top 3 strongest earthquakes in each region.</p></li></button>
-												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												
 												<div id="query4" class="query-container">
 <pre>
 <code>
@@ -358,16 +358,16 @@ ORDER BY max_magnitude DESC,
 <div id="explanation4" class="explanation" style="display: none;">
         <p>
 	<ul>
-        <li>Πρώτα ταξινομούνται οι περιοχές με βάση τον ισχυρότερο σεισμό τους (max_magnitude DESC).</li>
-        <li>Αν έχουν τον ίδιο μέγιστο σεισμό, εμφανίζονται αλφαβητικά (region_name ASC).</li>
-        <li>Μέσα σε κάθε περιοχή, οι σεισμοί ταξινομούνται από τον μεγαλύτερο προς τον μικρότερο ([Magnitude (ML)] DESC).</li>
-        <li>Δεν επιστρέφεται το max_magnitude στο τελικό αποτέλεσμα γιατί δεν χρειάζεται (απλά βοηθάει στην ταξινόμηση).</li>
+        <li>Regions are first sorted based on their strongest earthquake (max_magnitude DESC).</li>
+        <li>If they have the same maximum earthquake, they appear in alphabetical order (region_name ASC).</li>
+        <li>Within each region, earthquakes are sorted from largest to smallest ([Magnitude (ML)] DESC).</li>
+        <li>The max_magnitude is not returned in the final result because it is only used for sorting.</li>
         
-	Η εκδοχή αυτή διασφαλίζει ότι:
+	This approach ensures that:
         <ul>
-            <li>✅Εμφανίζονται ακριβώς 3 σεισμοί για κάθε περιοχή.</li>
-            <li>✅Οι περιοχές ταξινομούνται σωστά με βάση τον πιο ισχυρό σεισμό τους.</li>
-            <li>✅Οι σεισμοί κάθε περιοχής είναι με φθίνουσα σειρά μεγέθους.</li>
+            <li>✅ Exactly 3 earthquakes are displayed for each region.</li>
+            <li>✅ Regions are correctly sorted based on their strongest earthquake.</li>
+            <li>✅ Earthquakes within each region are in descending order of magnitude.</li>
         </ul>
         </ul>	
         </p>
@@ -563,7 +563,7 @@ ORDER BY max_magnitude DESC,
 												
 									<h4>3. Monthly Earthquake Trends</h4>
 											<button class="toggle-query-button" onclick="toggleQuery('query5')"><li><p> Monthly Average Earthquake Counts</p></li></button>
-												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												
 												<div id="query5" class="query-container">
 <pre>
 <code>
@@ -582,6 +582,22 @@ GROUP BY r.region_name
 ORDER BY avg_per_month DESC;
 </code>
 </pre>
+
+<button class="toggle-explanation" onclick="toggleExplanation('explanation5')">Show Explanation</button>
+<div id="explanation5" class="explanation" style="display: none;">
+        <p>
+	<ul>
+        <li>Monthly earthquake count calculation: In the inner subquery, we calculate the number of earthquakes per month (separating the year and month using the expression YEAR(e.[Origin Time (GMT)]) * 12 + MONTH(e.[Origin Time (GMT)])).</li>
+        <li>Average earthquakes per month: In the outer query, we use the AVG() function to compute the average number of earthquakes per month.</li>
+        <li>Grouping by region: We group the result by region and sort it in descending order based on avg_per_month.</li>
+
+	This approach accurately calculates the average number of earthquakes per month for each region.
+        </ul>	
+        </p>
+    </div>
+<div style="height: 20px;"></div> 													
+
+													
 											<h3>Sample Results</h3>
 											<table border="1">
 											<tr>
@@ -660,7 +676,7 @@ ORDER BY avg_per_month DESC;
 											</div>		
 
 											<button class="toggle-query-button" onclick="toggleQuery('query6')"><li><p> Earthquake Frequency by Day of the Week.</p></li></button>
-												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												
 												<div id="query6" class="query-container">
 <pre>
 <code>
@@ -678,13 +694,14 @@ ORDER BY earthquake_count DESC;
 <div id="explanation6" class="explanation" style="display: none;">
         <p>
 	<ul>
-        ✅ Χρήση DATENAME(WEEKDAY, ...), που επιστρέφει το όνομα της ημέρας (π.χ. "Monday", "Tuesday").
-	✅ Ομαδοποίηση με βάση το όνομα της ημέρας, κάτι που λειτουργεί σωστά αν το language setting του SQL Server είναι στα Αγγλικά.
-	✅ Ταξινόμηση με βάση το πλήθος σεισμών (COUNT(*)), οπότε θα εμφανίζονται πρώτα οι ημέρες με τους περισσότερους σεισμούς.
+        ✅ Use of DATENAME(WEEKDAY, ...), which returns the name of the day (e.g., "Monday", "Tuesday").  
+        ✅ Grouping based on the day name, which works correctly if the SQL Server language setting is in English.  
+        ✅ Sorting based on the number of earthquakes (COUNT(*)), so days with the most earthquakes appear first.  
+	</ul>
 	<div style="height: 20px;"></div>
         </p>
     </div>
-<div style="height: 20px;"></div> 
+<div style="height: 20px;"></div>  
 													
 													
 <h3>Sample Results</h3>
@@ -730,7 +747,7 @@ ORDER BY earthquake_count DESC;
 
 												
 											<button class="toggle-query-button" onclick="toggleQuery('query7')"><li><p>Examined if earthquakes are occurring at greater depths over time.</p></li></button>
-												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												
 												<div id="query7" class="query-container">
 <pre>
 <code>
@@ -758,16 +775,16 @@ ORDER BY dc.region_name, dc.quake_year DESC;
 <div id="explanation7" class="explanation" style="display: none;">
         <p>
 	<ul>
-        ✅ Χρήσιμο για να δούμε αν σεισμοί σε μια περιοχή συμβαίνουν όλο και πιο βαθιά στη Γη. 
+        ✅ Useful for determining whether earthquakes in a region are occurring at increasing depths within the Earth.  
 	<div style="height: 20px;"></div>
-        <li>Στην πρώτη WITH δήλωση, υπολογίζουμε το μέσο βάθος (avg_depth) των σεισμών για κάθε περιοχή και έτος.</li>
-        <li>Στη δεύτερη WITH δήλωση, υπολογίζουμε τη διαφορά του βάθους μεταξύ του τρέχοντος και του προηγούμενου έτους χρησιμοποιώντας την LAG() συνάρτηση.</li>
-        <li>Στην τελική SELECT, φιλτράρουμε με το WHERE dc.depth_change > 0 για να εντοπίσουμε περιοχές όπου το βάθος των σεισμών αυξάνεται με τα χρόνια.</li>
-	<li>Τα αποτελέσματα ταξινομούνται κατά περιοχή και έτος, με τα πιο πρόσφατα αποτελέσματα να εμφανίζονται πρώτα.</li>
-        
+        <li>In the first WITH statement, we calculate the average depth (avg_depth) of earthquakes for each region and year.</li>
+        <li>In the second WITH statement, we compute the depth difference between the current and previous year using the LAG() function.</li>
+        <li>In the final SELECT, we filter using WHERE dc.depth_change > 0 to identify regions where earthquake depths are increasing over the years.</li>
+	<li>Results are sorted by region and year, with the most recent results appearing first.</li>
+        </ul>
         </p>
     </div>
-<div style="height: 20px;"></div> 
+<div style="height: 20px;"></div>  
 													
 											<table border="1">
 											<tr>
@@ -862,7 +879,7 @@ ORDER BY dc.region_name, dc.quake_year DESC;
 									<h4>5. Earthquake Clusters and Patterns</h4>
 												
 											<button class="toggle-query-button" onclick="toggleQuery('query8')"><li><p>Detected regions experiencing earthquake swarms within 48-hour periods.</p></li></button>
-												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												
 												<div id="query8" class="query-container">
 <pre>
 <code>
@@ -886,29 +903,29 @@ ORDER BY q.[Origin Time (GMT)] DESC,q.cluster_size DESC ;
 <div id="explanation8" class="explanation" style="display: none;">
         <p>
 	<ul>
-        ✅ Χρήσιμο για να ανιχνεύσουμε αν υπάρχει "ξέσπασμα" σεισμών σε σύντομο χρονικό διάστημα.
-	Το ερώτημα βρίσκει περιοχές όπου σημειώθηκαν περισσότερα από 5 σεισμοί σε διάστημα 48 ωρών. 
-	Στο δεδομένο παράδειγμα, βλέπουμε πολλές σεισμικές δονήσεις σε κοντινές χρονικές στιγμές και περιοχές.
-	Βήματα επίλυσης:
+        ✅ Useful for detecting whether there is an "outbreak" of earthquakes in a short period.  
+	The query identifies regions where more than 5 earthquakes occurred within a 48-hour period.  
+	In the given example, we observe multiple seismic events occurring at close time intervals and locations.  
+	Solution steps:
 	<div style="height: 20px;"></div>
-        <li>Περιορισμός στη χρονική διάρκεια: Χρειαζόμαστε μια σωστή σύγκριση για τις χρονικές στιγμές (με 48 ώρες) και τα δεδομένα που ανήκουν στην ίδια περιοχή.</li>
-        <li>Συγκέντρωση των σεισμών: Πρέπει να μετρήσουμε τους σεισμούς σε κάθε περιοχή για το διάστημα των 48 ωρών.</li>
-        <li>Φιλτράρισμα: Το φίλτρο για "περισσότερους από 5 σεισμούς" πρέπει να είναι κατάλληλο για το υπολογιζόμενο διάστημα.</li>
-	<li>Τα αποτελέσματα ταξινομούνται κατά περιοχή και έτος, με τα πιο πρόσφατα αποτελέσματα να εμφανίζονται πρώτα.</li>
-	Ανάλυση:
-	<li>JOIN Earthquakes_Data e1 με e2: Συγκρίνουμε κάθε σεισμό με όλους τους άλλους σεισμούς στην ίδια περιοχή και με χρονική διαφορά εντός 48 ωρών.</li>
-	<li>HAVING COUNT(*) > 5: Φιλτράρουμε για περιοχές που έχουν περισσότερους από 5 σεισμούς στο συγκεκριμένο διάστημα των 48 ωρών.</li>
-	<li>DATEADD(HOUR, 48, e1.[Origin Time (GMT)]): Η συνάρτηση DATEADD χρησιμοποιείται για να προσθέσουμε 48 ώρες στο χρόνο ενός σεισμού, για να δημιουργήσουμε το εύρος του 48ώρου.</li>
-	<li>COUNT(*) AS cluster_size: Αυτό μετράει τον αριθμό των σεισμών που συμβαίνουν μέσα σε 48 ώρες από έναν σεισμό και στην ίδια περιοχή (e1.[region_name] = e2.[region_name]).</li>
-	Εάν το cluster_size είναι μεγαλύτερο από 5, τότε θεωρούμε ότι υπάρχουν περισσότεροι από 5 σεισμοί σε αυτή την περιοχή και σε αυτό το διάστημα, το οποίο ενδεχομένως να αποτελεί μια "σεισμική καταιγίδα" ή σύμπλεγμα σεισμών.
-	Για παράδειγμα, αν στην περιοχή Thira υπήρχαν 10 σεισμοί μέσα σε 48 ώρες, το cluster size για αυτή την ομάδα σεισμών θα είναι 10.
+        <li>Time restriction: We need a proper comparison for timestamps (within 48 hours) and data belonging to the same region.</li>
+        <li>Earthquake aggregation: We must count the earthquakes in each region within the 48-hour period.</li>
+        <li>Filtering: The filter for "more than 5 earthquakes" must be applied correctly for the calculated time window.</li>
+	<li>Results are sorted by region and year, with the most recent results appearing first.</li>
+	Analysis:
+	<li>JOIN Earthquakes_Data e1 with e2: We compare each earthquake with all other earthquakes in the same region within a 48-hour difference.</li>
+	<li>HAVING COUNT(*) > 5: We filter for regions with more than 5 earthquakes within the 48-hour window.</li>
+	<li>DATEADD(HOUR, 48, e1.[Origin Time (GMT)]): The DATEADD function is used to add 48 hours to an earthquake’s timestamp to create the 48-hour range.</li>
+	<li>COUNT(*) AS cluster_size: This counts the number of earthquakes occurring within 48 hours of an initial earthquake in the same region (e1.[region_name] = e2.[region_name]).</li>
+	If the cluster_size is greater than 5, then we consider that more than 5 earthquakes occurred in that region within that period, which may indicate a "seismic swarm" or an earthquake cluster.  
+	For example, if 10 earthquakes occurred within 48 hours in the Thira region, the cluster size for this group of earthquakes would be 10.
         </p>
     </div>
-<div style="height: 20px;"></div> 													
+<div style="height: 20px;"></div> 	  												
 													
 											</div>														
 											<button class="toggle-query-button" onclick="toggleQuery('query9')"><li><p> Identified locations with recurring earthquake activity.</p></li></button>
-												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												
 												<div id="query9" class="query-container">
 													<pre>
 <code>
@@ -931,11 +948,11 @@ ORDER BY r.region_name, q.[Origin Time (GMT)];
 <div id="explanation9" class="explanation" style="display: none;">
         <p>
 	<ul>
-        ✅ Χρήσιμο για να καταλάβουμε αν οι ισχυροί σεισμοί συμβαίνουν με κάποια συχνότητα.
+        ✅ Useful for understanding whether strong earthquakes occur at a certain frequency.
 	<div style="height: 20px;"></div>
         </p>
     </div>
-<div style="height: 20px;"></div> 														
+<div style="height: 20px;"></div>  														
 													
 <h3>Sample Results</h3>
 											<table border="1">
@@ -986,7 +1003,7 @@ ORDER BY r.region_name, q.[Origin Time (GMT)];
 									<h4>6. Spatial Analysis of Earthquakes</h4>
 										
 											<button class="toggle-query-button" onclick="toggleQuery('query10')"><li><p>Found earthquakes occurring within a 60 to 100 km radius of major cities (e.g. Santorini).</p></li></button>
-												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												
 												<div id="query10" class="query-container">
 <pre>
 <code>
@@ -1084,16 +1101,16 @@ ORDER BY distance_km;
 <div id="explanation10" class="explanation" style="display: none;">
         <p>
 	<ul>
-        ✅Βρίσκουμε σεισμούς σε ακτίνα 100 χλμ. από την Αθήνα (συντεταγμένες: latitude=37.9838, longitude=23.7275).
-        <li>Η φόρμουλα υπολογίζει την απόσταση δύο σημείων στη Γη χρησιμοποιώντας Haversine Formula.</li>
-        <li>Φιλτράρουμε μόνο τους σεισμούς μεταξύ 90 χλμ. με 100 χλμ. και ταξινομούμε κατά απόσταση.</li>
+        ✅ Finding earthquakes within a 100 km radius from Athens (coordinates: latitude=37.9838, longitude=23.7275).
+        <li>The formula calculates the distance between two points on Earth using the Haversine Formula.</li>
+        <li>We filter only earthquakes between 90 km and 100 km and sort them by distance.</li>
 	Explanation of coordinates:
 	<li>@latitude and @longitude: Define the center of the search area (Athens in this case).</li>
 	<li>@radius: The maximum distance in kilometers to search for earthquakes.</li>
 	<li>The ACOS formula calculates the great-circle distance between two points on the Earth's surface, using the Haversine formula approximation.</li>
         </p>
     </div>
-<div style="height: 20px;"></div> 
+<div style="height: 20px;"></div>
 													
 <h3>Results</h3>
 											<table border="2">
@@ -1133,7 +1150,7 @@ ORDER BY distance_km;
 									<h4> 7. Risk Assessment for Future Earthquakes</h4>
 	  
 									<button class="toggle-query-button" onclick="toggleQuery('query12')"><li><p>Identified of Major Earthquake Events Exceeding Regional Averages</p></li></button>
-												<!-- Το Query και τα αποτελέσματα του, αρχικά κρυμμένα -->
+												
 												<div id="query12" class="query-container">
 <pre>
 <code>
@@ -1166,21 +1183,20 @@ ORDER BY region_name;
 <div id="explanation10" class="explanation" style="display: none;">
         <p>
 	<ul>
-        ✅ Ανιχνεύουμε σεισμούς που είναι σημαντικά ισχυρότεροι από τον μέσο όρο μιας περιοχής. 
-	Εξήγηση:
-        <li>CTE AvgMagnitude: Αυτή η Common Table Expression υπολογίζει τον μέσο όρο μεγέθους σεισμών για κάθε περιοχή</li>
+        ✅ Detecting earthquakes that are significantly stronger than the average for a region.
+	Explanation:
+        <li>CTE AvgMagnitude: This Common Table Expression calculates the average earthquake magnitude for each region.</li>
         <li>CTE RankedEarthquakes:
-	Σε αυτή την CTE, χρησιμοποιούμε τη συνάρτηση ROW_NUMBER() για να ταξινομήσουμε τους σεισμούς ανά περιοχή (PARTITION BY r.region_name) και να τους αριθμήσουμε κατά φθίνουσα σειρά μεγέθους (ORDER BY e.[Magnitude (ML)] DESC).
-	Έτσι, ο μεγαλύτερος σεισμός σε κάθε περιοχή θα έχει τον αριθμό rn = 1.</li>
-	Τελική Επιλογή:
-	<li>Στην τελική επιλογή (SELECT), φιλτράρουμε για να κρατήσουμε μόνο εκείνες τις εγγραφές που έχουν rn = 1, δηλαδή τον μεγαλύτερο σεισμό για κάθε περιοχή.</li>
-	<li>Ταξινόμηση: Η τελική επιλογή ταξινομείται κατά όνομα περιοχής.</li>
-	Αποτέλεσμα:
-	<li>Με αυτή την προσέγγιση, θα έχεις ακριβώς ένα αποτέλεσμα για κάθε περιοχή, το οποίο θα είναι ο σεισμός με το μεγαλύτερο μέγεθος που υπερβαίνει το μέσο όρο κατά 1.5 και που έχει καταγραφεί κατά το τρέχον έτος.
-</li>
+	In this CTE, we use the ROW_NUMBER() function to rank earthquakes by region (PARTITION BY r.region_name) and assign them a descending order based on magnitude (ORDER BY e.[Magnitude (ML)] DESC).
+	This ensures that the largest earthquake in each region gets the number rn = 1.</li>
+	Final Selection:
+	<li>In the final SELECT statement, we filter to keep only the records where rn = 1, meaning the largest earthquake for each region.</li>
+	<li>Sorting: The final selection is sorted by region name.</li>
+	Result:
+	<li>With this approach, you get exactly one result per region, which is the strongest earthquake that exceeds the average magnitude by 1.5 and has been recorded in the current year.</li>
         </p>
     </div>
-<div style="height: 20px;"></div> 
+<div style="height: 20px;"></div>  
 													
 <h3>Results</h3>
 											<table border="1">
