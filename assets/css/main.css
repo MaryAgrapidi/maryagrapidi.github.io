@@ -4022,9 +4022,4 @@ input, select, textarea {
 }
 
 
-.explanation {
-    display: none;
-}
-.explanation.visible {
-    display: block;
-}
+
