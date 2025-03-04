@@ -334,17 +334,6 @@
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".toggle-explanation").forEach(button => {
-        button.addEventListener("click", function () {
-            let explanation = this.nextElementSibling;
-            explanation.classList.toggle("visible");
-
-            // Αλλάζουμε το κείμενο του κουμπιού
-            this.textContent = explanation.classList.contains("visible") ? "Hide Explanation" : "Show Explanation";
-        });
-    });
-});
 
 	
 })(jQuery);
