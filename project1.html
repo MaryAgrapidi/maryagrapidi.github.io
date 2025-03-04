@@ -1263,24 +1263,6 @@ ORDER BY region_name;
         };
     </script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll(".toggle-explanation").forEach(button => {
-                button.addEventListener("click", function () {
-                    // Αν το κουμπί είναι εμφωλευμένο μέσα σε ένα γονικό στοιχείο
-                    let explanation = this.parentElement.querySelector(".explanation");
-
-                    // Ελέγχουμε αν η εξήγηση είναι σωστά επιλεγμένη
-                    console.log(explanation); // Εκτυπώνεται το στοιχείο εξήγησης
-
-                    // Εναλλάσσουμε την κλάση 'visible'
-                    explanation.classList.toggle("visible");
-
-                    // Αλλάζουμε το κείμενο του κουμπιού
-                    this.textContent = explanation.classList.contains("visible") ? "Hide Explanation" : "Show Explanation";
-                });
-            });
-        });
-    </script>										    
+   						    
 	</body>
 </html>
