@@ -354,25 +354,22 @@ ORDER BY max_magnitude DESC,
 
 
 													
-<!-- Κουμπί για εμφάνιση της εξήγησης -->
-    <button class="toggle-explanation">Show Explanation</button>
-
-													
-    <!-- Απόκρυψη εξήγησης αρχικά -->
-    <div class="explanation" style="display: none;">
+<button class="toggle-explanation4" onclick="toggleExplanation('explanation4')">Show Explanation</button>
+<div id="explanation4" class="explanation" style="display: none;">
         <p>
 	<ul>
         <li>Πρώτα ταξινομούνται οι περιοχές με βάση τον ισχυρότερο σεισμό τους (max_magnitude DESC).</li>
         <li>Αν έχουν τον ίδιο μέγιστο σεισμό, εμφανίζονται αλφαβητικά (region_name ASC).</li>
         <li>Μέσα σε κάθε περιοχή, οι σεισμοί ταξινομούνται από τον μεγαλύτερο προς τον μικρότερο ([Magnitude (ML)] DESC).</li>
         <li>Δεν επιστρέφεται το max_magnitude στο τελικό αποτέλεσμα γιατί δεν χρειάζεται (απλά βοηθάει στην ταξινόμηση).</li>
-        Η εκδοχή αυτή διασφαλίζει ότι:
+        
+	Η εκδοχή αυτή διασφαλίζει ότι:
         <ul>
             <li>✅Εμφανίζονται ακριβώς 3 σεισμοί για κάθε περιοχή.</li>
             <li>✅Οι περιοχές ταξινομούνται σωστά με βάση τον πιο ισχυρό σεισμό τους.</li>
             <li>✅Οι σεισμοί κάθε περιοχής είναι με φθίνουσα σειρά μεγέθους.</li>
         </ul>
-    </ul>	
+        </ul>	
         </p>
     </div>
 <div style="height: 20px;"></div> 
