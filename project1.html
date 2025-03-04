@@ -1259,6 +1259,10 @@ ORDER BY region_name;
             document.querySelectorAll(".toggle-explanation").forEach(button => {
                 button.addEventListener("click", function () {
                     let explanation = this.nextElementSibling;
+
+                    // Προσθήκη logging για να ελέγξουμε τη συμπεριφορά
+                    console.log(explanation);
+
                     explanation.classList.toggle("visible");
 
                     // Αλλάζουμε το κείμενο του κουμπιού
