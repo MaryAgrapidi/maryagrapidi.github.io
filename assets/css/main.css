@@ -4021,3 +4021,10 @@ input, select, textarea {
     margin: 20px 0; /* Ενισχυμένο κενό πάνω και κάτω */
 }
 
+
+.explanation {
+    display: none;
+}
+.explanation.visible {
+    display: block;
+}
