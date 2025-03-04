@@ -332,6 +332,23 @@
 
 			});
 
+
+
+	document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".toggle-explanation").forEach(button => {
+        button.addEventListener("click", function () {
+            let explanation = this.nextElementSibling;
+            if (explanation.style.display === "none") {
+                explanation.style.display = "block";
+                this.textContent = "Hide Explanation";
+            } else {
+                explanation.style.display = "none";
+                this.textContent = "Show Explanation";
+            }
+        });
+    });
+});
+
 })(jQuery);
 
 
