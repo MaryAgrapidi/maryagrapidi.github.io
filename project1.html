@@ -6,6 +6,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+        .explanation {
+            display: none; /* Αρχικά κρυφό */
+        }
+
+        .explanation.visible {
+            display: block; /* Όταν η κλάση 'visible' είναι ενεργή, να εμφανίζεται */
+        }
+    </style>
 	</head>
 	<body class="is-preload">
 
@@ -1254,15 +1263,16 @@ ORDER BY region_name;
         };
     </script>
 
-<script>
+  <script>
         document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll(".toggle-explanation").forEach(button => {
                 button.addEventListener("click", function () {
                     let explanation = this.nextElementSibling;
 
-                    // Προσθήκη logging για να ελέγξουμε τη συμπεριφορά
-                    console.log(explanation);
+                    // Έλεγχος για το στοιχείο εξήγησης
+                    console.log(explanation); // Εκτυπώνεται το στοιχείο εξήγησης
 
+                    // Εναλλάσσουμε την κλάση 'visible'
                     explanation.classList.toggle("visible");
 
                     // Αλλάζουμε το κείμενο του κουμπιού
@@ -1271,7 +1281,6 @@ ORDER BY region_name;
             });
         });
     </script>
-
 												    
 	</body>
 </html>
