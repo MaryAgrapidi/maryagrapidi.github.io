@@ -739,6 +739,21 @@ ORDER BY dc.region_name, dc.quake_year DESC;
 </code>
 </pre>
 <h3>Sample Results</h3>
+													
+<button class="toggle-explanation" onclick="toggleExplanation('explanation7')">Show Explanation</button>
+<div id="explanation7" class="explanation" style="display: none;">
+        <p>
+	<ul>
+        ✅ Χρήσιμο για να δούμε αν σεισμοί σε μια περιοχή συμβαίνουν όλο και πιο βαθιά στη Γη. 
+        <li>Στην πρώτη WITH δήλωση, υπολογίζουμε το μέσο βάθος (avg_depth) των σεισμών για κάθε περιοχή και έτος.</li>
+        <li>Στη δεύτερη WITH δήλωση, υπολογίζουμε τη διαφορά του βάθους μεταξύ του τρέχοντος και του προηγούμενου έτους χρησιμοποιώντας την LAG() συνάρτηση.</li>
+        <li>Στην τελική SELECT, φιλτράρουμε με το WHERE dc.depth_change > 0 για να εντοπίσουμε περιοχές όπου το βάθος των σεισμών αυξάνεται με τα χρόνια.</li>
+	<li>Τα αποτελέσματα ταξινομούνται κατά περιοχή και έτος, με τα πιο πρόσφατα αποτελέσματα να εμφανίζονται πρώτα.</li>
+        
+        </p>
+    </div>
+<div style="height: 20px;"></div> 
+													
 											<table border="1">
 											<tr>
 											<th>Region name</th>
