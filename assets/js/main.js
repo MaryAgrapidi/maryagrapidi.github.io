@@ -333,7 +333,28 @@
 			});
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Το κουμπί για την εμφάνιση/απόκρυψη της εξήγησης
+    document.querySelectorAll(".toggle-explanation").forEach(button => {
+        button.addEventListener("click", function () {
+            let explanation = this.nextElementSibling; // Εύρεση του div με την εξήγηση
+            explanation.style.display = explanation.style.display === "none" ? "block" : "none"; // Toggle εμφάνισης
 
+            // Αλλαγή κειμένου του κουμπιού
+            this.textContent = explanation.style.display === "block" ? "Hide Explanation" : "Show Explanation";
+        });
+    });
+});
+
+// Συνάρτηση για το toggle του query, όπως πριν
+function toggleQuery(queryId) {
+    const queryContainer = document.getElementById(queryId);
+    if (queryContainer.style.display === "none") {
+        queryContainer.style.display = "block";
+    } else {
+        queryContainer.style.display = "none";
+    }
+}
 
 	
 })(jQuery);
