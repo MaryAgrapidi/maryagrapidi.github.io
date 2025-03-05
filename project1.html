@@ -37,18 +37,21 @@ th, td {
             background-color: #242943;
             color: white;
             border: none;
-            /*border-radius: 50%;*/
+            border-radius: 50%;
             cursor: pointer;
             font-size: 24px;
-            display: none; /* Αρχικά κρυφό */
+            display: flex; /* Αρχικά κρυφό */
             align-items: center;
             justify-content: center;
+	    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ελαφριά σκιά */
             transition: 0.3s ease-in-out;
         }
 
         /* Hover effect */
         #scrollTopBtn:hover {
+	    border: 2px solid #ffffff; /* Εμφάνιση κυκλικού περιγράμματος στο hover */
             background-color: #63a6e6;
+	    color: #ffffff; /* Άσπρο βέλος */
         }
 
         /* Animation για smooth εμφάνιση */
