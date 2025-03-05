@@ -2858,7 +2858,7 @@ input, select, textarea {
 
 			.tiles article:nth-child(6n - 5):before {
 				background-color: #2d3659; 	
-				                /*αλλαγη χρωματων στα πορτζεκτσ οταν πατας επανω*/
+				               
 			}
 
 			.tiles article:nth-child(6n - 4):before {
@@ -3296,9 +3296,9 @@ input, select, textarea {
 			position: absolute;
 		}
 
-			#header.alt.style1 .logo strong {       /*παλι αλλαζουν εδω τα κουτια των προτζεκτς*/
+			#header.alt.style1 .logo strong {      
 
-				             /*αλλαγη χρωματων στα πορτζεκτσ οταν πατας επανω*/
+				            
 				color: #2d3659;
 			}
 
@@ -4002,9 +4002,9 @@ input, select, textarea {
     font-weight: 300;
     letter-spacing: 0.025em;
     line-height: 1.65;	
-  background: none!important;      /* Αφαιρεί το background */
-  color: #e3e3e3;          /* Διατηρεί το επιθυμητό χρώμα για το κείμενο */
-  font-size: inherit;    /* Να κληρονομεί το μέγεθος του κειμένου */
+  background: none!important;      
+  color: #e3e3e3;         
+  font-size: inherit;   
   text-transform: none!important;
   outline: none !important;
   border: none !important;
@@ -4015,10 +4015,10 @@ input, select, textarea {
    
 }
 .query-container {
-    display: none; /* Αρχικά κρύβει τα queries */
+    display: none; 
     /*border-radius: 5px;*/
-    width: 69%; /* Καταλαμβάνει όλο το πλάτος */
-    margin: 20px 0; /* Ενισχυμένο κενό πάνω και κάτω */
+    width: 69%; 
+    margin: 20px 0;
 }
 
 
