@@ -422,16 +422,16 @@ ORDER BY max_magnitude DESC,
 <div id="explanation4" class="explanation" style="display: none;">
         <p>
 	<ul>
-        <p>Regions are first sorted based on their strongest earthquake (max_magnitude DESC).
-        If they have the same maximum earthquake, they appear in alphabetical order (region_name ASC).
-        Within each region, earthquakes are sorted from largest to smallest ([Magnitude (ML)] DESC).
-        The max_magnitude is not returned in the final result because it is only used for sorting.</p>
+        <li>Regions are first sorted based on their strongest earthquake (max_magnitude DESC).</li>
+        <li>If they have the same maximum earthquake, they appear in alphabetical order (region_name ASC).</li>
+        <li>Within each region, earthquakes are sorted from largest to smallest ([Magnitude (ML)] DESC).</li>
+        <li>The max_magnitude is not returned in the final result because it is only used for sorting.</li>
         
 	This approach ensures that:
         <ul>
-            <p>✅ Exactly 3 earthquakes are displayed for each region.
+            ✅ Exactly 3 earthquakes are displayed for each region.
             ✅ Regions are correctly sorted based on their strongest earthquake.
-            ✅ Earthquakes within each region are in descending order of magnitude.</p>
+            ✅ Earthquakes within each region are in descending order of magnitude.
         </ul>
         </ul>	
         </p>
