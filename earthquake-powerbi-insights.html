@@ -191,7 +191,40 @@ th, td {
 
 												<li><p>This suggests significant seismic activity in the Santorini volcanic region.</p></li>
 												<img src="images/2_.png" alt="Earthquakes by Region" width="300" style="border-radius: 10px;">
-											</ul>
+
+												   <p>The visualization above highlights the region most affected by seismic activity, identified as <strong>Thira (Santorini)</strong>. By analyzing earthquake occurrences across different locations, we found that this region experienced the highest number of recorded earthquakes in the dataset.</p>
+
+												   <p>To determine the most affected region, I used the following DAX formula:</p>
+
+<h3>DAX Code:</h3>
+<pre><code>
+TopRegion = 
+VAR TopRegionTable = 
+    TOPN(
+        1, 
+        SUMMARIZE(
+            'Earthquake_Data', 
+            'Earthquake_Data'[Region Name], 
+            "QuakeCount", COUNT('Earthquake_Data'[Origin Time])
+        ), 
+        [QuakeCount], DESC
+    )
+VAR TopRegionName = CONCATENATEX(TopRegionTable, 'Earthquake_Data'[Region Name], ", ")
+VAR QuakeCount = MAXX(TopRegionTable, [QuakeCount])
+RETURN 
+    TopRegionName & " (" & QuakeCount & " EQs)"
+</code></pre>
+
+													<p>The formula works as follows:</p>
+													<ul>
+													    <li><strong>TOPN(1)</strong>: Selects the region with the highest earthquake count.</li>
+													    <li><strong>SUMMARIZE</strong>: Groups earthquake data by region and counts occurrences.</li>
+													    <li><strong>CONCATENATEX</strong>: Converts the top region name into a string format.</li>
+													    <li><strong>MAXX</strong>: Extracts the maximum earthquake count.</li>
+													</ul>
+													
+													<p>This insight is crucial for understanding seismic trends, as it pinpoints the region that has experienced the most earthquakes. Such information is valuable for further geological analysis and disaster preparedness planning.</p>
+																								</ul>
 												    
 									<h4>3. Strongest Earthquake Recorded </h4>
 											   <ul>
