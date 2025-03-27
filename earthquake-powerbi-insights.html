@@ -208,6 +208,29 @@ th, td {
 												 
 												<li><p>17.83% were stronger (>3.5), with some exceeding 4.0.</p></li>
 												<img src="images/4_.png" alt="Earthquakes by Region" width="700" style="border-radius: 10px;">
+												<p>In this key insight, I used a <strong>Donut Chart</strong> to visually represent the distribution of earthquake magnitudes. The chart allows users to easily understand the proportion of earthquakes in each magnitude range, helping to identify trends and patterns in seismic activity.</p>
+
+												<p>To categorize the earthquake magnitudes, I used the following <strong>DAX formula</strong> to create a new column, <em>Magnitude Range</em>, which classifies earthquakes into four categories: Minor, Light, Moderate, and Strong. This categorization allowed for a more meaningful and visually distinct presentation of earthquake magnitudes.</p>
+
+												<h3>DAX Code:</h3>
+												<pre><code>
+												Magnitude Range = 
+												SWITCH(  
+												    TRUE(),  
+												    'earthquake_data'[Magnitude] < 2.0, "Μικροί (<2.0)",  
+												    'earthquake_data'[Magnitude] >= 2.0 && 'earthquake_data'[Magnitude] < 3.5, "Ασθενείς (2.0 - 3.5)",  
+												    'earthquake_data'[Magnitude] >= 3.5 && 'earthquake_data'[Magnitude] < 5.0, "Μέτριοι (3.5 - 4.0)",  
+												    'earthquake_data'[Magnitude] >= 4.0, "Ισχυροί (>4.0)"  
+												)
+												</code></pre>
+												
+												<p>By using this DAX formula, I created a <strong>calculated column</strong> that allows me to categorize each earthquake based on its magnitude. This categorization is directly used in the <strong>Donut Chart</strong> to visually represent the distribution of earthquakes across the four categories.</p>
+												
+												<h3>Visualization:</h3>
+												
+												<p>The <strong>Donut Chart</strong> provides an intuitive and easy-to-understand visualization of earthquake distribution across the four categories, helping to highlight which magnitude ranges are most common in the dataset. It allows users to quickly identify the proportion of <strong>minor</strong>, <strong>light</strong>, <strong>moderate</strong>, and <strong>strong</strong> earthquakes and understand the relative frequency of each category.</p>
+												
+												<p>This visualization helps to quickly assess the overall distribution of seismic activity, providing key insights into the intensity of earthquakes within the dataset.</p>
 											</ul>
 									<h4>5. Earthquake Depth Analysis </h4>
 											<ul>
