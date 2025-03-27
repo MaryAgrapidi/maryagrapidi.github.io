@@ -211,18 +211,16 @@ th, td {
 												<p>In this key insight, I used a <strong>Donut Chart</strong> to visually represent the distribution of earthquake magnitudes. The chart allows users to easily understand the proportion of earthquakes in each magnitude range, helping to identify trends and patterns in seismic activity.</p>
 
 												<p>To categorize the earthquake magnitudes, I used the following <strong>DAX formula</strong> to create a new column, <em>Magnitude Range</em>, which classifies earthquakes into four categories: Minor, Light, Moderate, and Strong. This categorization allowed for a more meaningful and visually distinct presentation of earthquake magnitudes.</p>
-
-												<h3>DAX Code:</h3>
-												<pre><code>
-												Magnitude Range = 
-												SWITCH(  
-												    TRUE(),  
-												    'earthquake_data'[Magnitude] < 2.0, "Μικροί (<2.0)",  
-												    'earthquake_data'[Magnitude] >= 2.0 && 'earthquake_data'[Magnitude] < 3.5, "Ασθενείς (2.0 - 3.5)",  
-												    'earthquake_data'[Magnitude] >= 3.5 && 'earthquake_data'[Magnitude] < 5.0, "Μέτριοι (3.5 - 4.0)",  
-												    'earthquake_data'[Magnitude] >= 4.0, "Ισχυροί (>4.0)"  
-												)
-												</code></pre>
+<h3>DAX Code:</h3>
+Magnitude Range = 
+SWITCH(  
+    TRUE(),  
+    'earthquake_data'[Magnitude] < 2.0, "Minor (&lt;2.0)",  
+    'earthquake_data'[Magnitude] >= 2.0 && 'earthquake_data'[Magnitude] &lt; 3.5, "Light (2.0 - 3.5)",  
+    'earthquake_data'[Magnitude] >= 3.5 && 'earthquake_data'[Magnitude] &lt; 5.0, "Moderate (3.5 - 4.0)",  
+    'earthquake_data'[Magnitude] >= 4.0, "Strong (&gt;4.0)"  
+)
+</code></pre>
 												
 												<p>By using this DAX formula, I created a <strong>calculated column</strong> that allows me to categorize each earthquake based on its magnitude. This categorization is directly used in the <strong>Donut Chart</strong> to visually represent the distribution of earthquakes across the four categories.</p>
 												
