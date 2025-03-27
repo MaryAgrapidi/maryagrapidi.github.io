@@ -232,6 +232,28 @@ RETURN
 
 												<li><p>This was the most intense event within the selected magnitude range (0.1 - 5.9).</p></li>
 												<img src="images/3_.png" alt="Earthquakes by Region" width="300" style="border-radius: 10px;">   
+												<p>The visualization above highlights the <strong>strongest recorded earthquake</strong> in the dataset, showcasing both its magnitude and the date it occurred. Understanding the most powerful earthquake event is essential for assessing seismic risks and potential damage scenarios.</p>
+
+												<p>To identify the strongest earthquake and its occurrence date, I used the following DAX formula:</p>
+
+<h3>DAX Code:</h3>
+<pre><code>
+MaxMagnitude = 
+VAR MaxMag = MAXX(ALLSELECTED('Earthquake_Data'), 'Earthquake_Data'[Magnitude])
+VAR MaxMagDate = MAXX(FILTER(ALLSELECTED('Earthquake_Data'), 'Earthquake_Data'[Magnitude] = MaxMag), 'Earthquake_Data'[Origin Time])
+
+RETURN MaxMag & " (" & FORMAT(MaxMagDate, "DD-MM-YYYY") & ")"
+</code></pre>
+
+<p>The formula works as follows:</p>
+<ul>
+    <li><strong>MAXX(ALLSELECTED())</strong>: Finds the highest magnitude recorded in the dataset.</li>
+    <li><strong>FILTER()</strong>: Retrieves the row corresponding to the maximum magnitude.</li>
+    <li><strong>MAXX()</strong>: Extracts the latest date of an earthquake with that magnitude.</li>
+    <li><strong>FORMAT()</strong>: Displays the date in a human-readable format (DD-MM-YYYY).</li>
+</ul>
+
+<p>By applying this formula, I determined that the strongest recorded earthquake in the dataset had a magnitude of <strong>[MaxMag]</strong> and occurred on <strong>[MaxMagDate]</strong>. Such insights are critical for geological studies and disaster preparedness.</p>
 											</ul>
 									<h4>4. Earthquake Distribution by Magnitude </h4>		
 											 <ul>
