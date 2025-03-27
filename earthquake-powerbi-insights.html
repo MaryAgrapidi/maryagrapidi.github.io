@@ -292,6 +292,28 @@ SWITCH(
 
 												<li><p>Shallow earthquakes tend to be more destructive, even at lower magnitudes.</p></li>
 												<img src="images/5_.png" alt="Earthquakes by Region" width="300" style="border-radius: 10px;">
+												<p>The visualization above highlights the proportion of earthquakes that occurred at a depth of less than 10 km. Shallow earthquakes are particularly important because they are often more destructive compared to deeper ones, as seismic waves travel shorter distances and retain more energy when they reach the surface.</p>
+
+												<p>To calculate the percentage of shallow earthquakes in the dataset, I used the following DAX formula:</p>
+
+<h3>DAX Code:</h3>
+<pre><code>
+EarthquakesUnder10km = 
+VAR TotalEarthquakes = COUNT('earthquake_data'[Origin Time])
+VAR ShallowEarthquakesUnder10km = COUNTROWS(FILTER('earthquake_data', 'earthquake_data'[Depth] < 10))
+RETURN IF(TotalEarthquakes > 0, DIVIDE(ShallowEarthquakesUnder10km, TotalEarthquakes, 0), 0)
+</code></pre>
+
+<p>The formula works as follows:</p>
+<ul>
+    <li><strong>COUNT('earthquake_data'[Origin Time])</strong>: Counts the total number of earthquakes in the dataset.</li>
+    <li><strong>FILTER()</strong>: Selects only the earthquakes with a depth of less than 10 km.</li>
+    <li><strong>COUNTROWS()</strong>: Counts the number of shallow earthquakes.</li>
+    <li><strong>DIVIDE()</strong>: Computes the proportion of shallow earthquakes relative to the total.</li>
+    <li><strong>IF()</strong>: Ensures that the division only happens if there are recorded earthquakes, preventing errors.</li>
+</ul>
+
+<p>By applying this formula, I was able to determine the percentage of earthquakes that occurred at a depth of less than 10 km. This insight is crucial because shallow earthquakes tend to cause more surface damage, making it a key factor in seismic risk assessment and disaster preparedness.</p>
 											</ul>
 											
 									<h4>6. Detailed Earthquake Data </h4>
